@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biography — Maxim Kantor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Maxim Kantor</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="works.html">Works</a></li>
+    <li><a href="biography.html" class="active">Biography</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Biography</h1>
+</div>
+
+<div class="content-wrap" style="padding-top: 48px;">
+  <p class="bio-text">
+    Maxim Kantor was born in 1957 in Moscow. A painter, writer and intellectual, he works in the tradition of European figurative painting — expressionist, symbolist, metaphysical realist. His canvases engage the great themes of Western civilization: war, faith, solitude, the fate of Europe. They speak through the body, through gesture, through the weight of matter.
+  </p>
+  <p class="bio-text" style="margin-top: 32px;">
+    His work is held in the permanent collections of the Tretyakov Gallery (Moscow), the British Museum (London), and the Bochum Art Museum (Germany). He has exhibited at major European institutions and participated in the Venice Biennale. He lives and works between France and the United Kingdom.
+  </p>
+  <p class="bio-text" style="margin-top: 32px;">
+    Alongside his painting, Kantor is the author of several novels and essays that have been translated into multiple European languages. His writing, like his painting, is concerned with the moral and political crisis of the contemporary world — with what it means to make art in the age of catastrophe.
+  </p>
+</div>
+
+<footer>
+  <span>© 2025 Maxim Kantor</span>
+  <span>All rights reserved</span>
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+</script>
+</body>
+</html>

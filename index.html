@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maxim Kantor — Painter</title>
+  <meta name="description" content="Maxim Kantor — Russian painter, writer and intellectual. Born 1957 in Moscow.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Maxim Kantor</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="works.html">Works</a></li>
+    <li><a href="biography.html">Biography</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <img src="images/battle-of-the-centaur.jpg" alt="Battle of the Centaur, 2025, 200×200 cm">
+  <div class="hero-content">
+    <h1 class="hero-title">Maxim Kantor</h1>
+    <p class="hero-subtitle">Painter &middot; Writer &middot; 1957&ndash;</p>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Maxim Kantor</span>
+  <span>All rights reserved</span>
+</footer>
+
+<script>
+function toggleNav() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+</script>
+</body>
+</html>
