@@ -5,8 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV — Maxim Kantor</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Page-specific override: white background for CV page -->
+  <style>
+    body.cv-page { background: #fafafa; color: #111; }
+    body.cv-page footer { background: #fafafa; border-top-color: #e5e5e5; color: #999; }
+    body.cv-page footer a { color: #999; }
+    body.cv-page footer a:hover { color: #111; }
+
+    /* CV-specific typography */
+    .cv-page .page-header { border-bottom-color: #e5e5e5; }
+    .cv-page .page-header h1 { color: #111; }
+    .cv-page .page-header .subtitle { color: #777; }
+
+    /* Section header */
+    .cv-page .cv-section-title {
+      font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: #999; margin-bottom: 0;
+      padding-bottom: 12px; border-bottom: 1px solid #e5e5e5;
+    }
+
+    /* Tabular CV rows */
+    .cv-table { margin-top: 0; }
+    .cv-row {
+      display: grid; grid-template-columns: 96px 1fr;
+      gap: 0 32px; padding: 11px 0;
+      border-bottom: 1px solid #f0f0f0;
+      align-items: baseline;
+    }
+    .cv-row:last-child { border-bottom: none; }
+    .cv-year {
+      font-family: var(--sans); font-size: 0.78rem; font-weight: 500;
+      color: #111; letter-spacing: 0.02em; padding-top: 1px; flex-shrink: 0;
+    }
+    .cv-content {
+      font-family: var(--sans); font-size: 0.85rem; line-height: 1.55;
+      color: #333; font-weight: 300;
+    }
+    .cv-content em { font-family: var(--serif); font-style: italic; font-size: 0.95rem; }
+    .cv-content strong { font-weight: 500; color: #111; }
+
+    /* Venice Biennale highlight row */
+    .cv-row.highlight { background: #f6f4f0; margin: 0 -24px; padding: 14px 24px; border-bottom: none; border-top: 1px solid #e5e5e5; }
+    .cv-row.highlight .cv-year { font-weight: 700; font-size: 0.82rem; }
+    .cv-row.highlight .cv-content { font-size: 0.88rem; color: #111; }
+
+    /* Collections grid (white version) */
+    .cv-page .collection-item { border-bottom-color: #f0f0f0; }
+    .cv-page .collection-item .institution { color: #111; }
+    .cv-page .collection-item .location { color: #777; }
+    .cv-page .collections-grid { margin-top: 0; }
+
+    /* Section wrap */
+    .cv-section-wrap { margin-bottom: 56px; }
+
+    /* Group exh placeholder */
+    .cv-placeholder {
+      padding: 24px 0; font-size: 0.82rem; color: #aaa;
+      font-style: italic; border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Download button */
+    .cv-download-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--sans); font-size: 0.65rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase; color: #777;
+      border-bottom: 1px solid #ccc; padding-bottom: 2px;
+      text-decoration: none; transition: color 0.2s, border-color 0.2s;
+    }
+    .cv-download-btn:hover { color: #111; border-color: #888; }
+  </style>
 </head>
-<body>
+<body class="cv-page">
 
 <nav>
   <a href="index.html" class="nav-brand">Maxim Kantor</a>
@@ -15,64 +84,417 @@
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="works.html">Works</a></li>
+    <li><a href="installations.html">Installations</a></li>
     <li><a href="biography.html">Biography</a></li>
     <li><a href="cv.html" class="active">CV</a></li>
+    <li><a href="publications.html">Publications</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <div class="page-header">
   <h1>Curriculum Vitae</h1>
-  <p class="subtitle">Born 1957, Moscow &mdash; Lives and works in France and the United Kingdom</p>
+  <p class="subtitle" style="margin-top: 10px;">
+    Born 1957, Moscow &nbsp;&middot;&nbsp; Lives and works in France and the United Kingdom
+  </p>
+  <!-- PDF download — replace href with actual PDF path when available -->
+  <a href="#" class="cv-download-btn" style="margin-top: 20px;" aria-label="Download CV as PDF">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </a>
 </div>
 
-<div class="content-wrap" style="padding-top: 48px;">
+<div class="content-wrap" style="padding-top: 52px; max-width: 900px;">
 
-  <div class="cv-section">
-    <h2>Museum Collections</h2>
-    <ul class="cv-list">
-      <li><span class="year">—</span><span>The Tretyakov Gallery, Moscow, Russia</span></li>
-      <li><span class="year">—</span><span>The British Museum, London, United Kingdom</span></li>
-      <li><span class="year">—</span><span>Bochum Art Museum, Bochum, Germany</span></li>
-    </ul>
+  <!-- 1 ─ Solo Exhibitions ──────────────────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Selected Solo Exhibitions</h2>
+    <div class="cv-table">
+
+      <!-- Venice Biennale — featured entry -->
+      <div class="cv-row highlight">
+        <span class="cv-year">1997</span>
+        <span class="cv-content">
+          <strong>XLVII Venice Biennale, Russian Pavilion, Venice</strong> &nbsp;—&nbsp; solo presentation <em>"Criminal Chronicle"</em>
+        </span>
+      </div>
+
+      <div class="cv-row">
+        <span class="cv-year">2025</span>
+        <span class="cv-content">"Gesichter — Visages — Faces", Luxembourg School of Religion &amp; Society, Luxembourg <em>(June–July)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2024</span>
+        <span class="cv-content">"Der Zeuge — The Witness", University of Bamberg, Kulturraum St. Johannis <em>(April–June)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2024</span>
+        <span class="cv-content">"Globe and Time", Kasteyev State Museum of Arts, Almaty, Kazakhstan <em>(Feb–March)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2024</span>
+        <span class="cv-content">Paintings and Graphic, Art Gallery Has Sanat, Astana, Kazakhstan <em>(Nov–Dec)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2022</span>
+        <span class="cv-content">"The Rape of Europe", National Museum of History and Art, Luxembourg <em>(28 April – 16 October)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2022</span>
+        <span class="cv-content">"Rats and Pigs on the Ship of Fools", Galerie Simoncini, Luxembourg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2019</span>
+        <span class="cv-content">"Maxim Kantor and the Last Judgement", Saint-Michael's Church, Luxembourg <em>(28–30 June)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2018</span>
+        <span class="cv-content">"Bosch &amp; Kantor — Das Jüngste Gericht", Gemäldegalerie, Akademie der Bildenden Künste, Vienna <em>(Oct 2018 – Jan 2019)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2018</span>
+        <span class="cv-content">"Garten des Wissens", Library of Bamberg University <em>(Oct 2018 – April 2019)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2018</span>
+        <span class="cv-content">"Faust", Galerie Simoncini, Luxembourg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2017</span>
+        <span class="cv-content">Inauguration of site-specific paintings "Library" and "Storm", Genscher Saal, Bundestag, Berlin</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2017</span>
+        <span class="cv-content">"De l'autre côté — Merry Symbolism", Église Saint-Merry, Paris</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2017</span>
+        <span class="cv-content">"Das Neue Bestiarium", Kunsthalle Emden, Niedersachsen</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2016</span>
+        <span class="cv-content">"Rodina kontra Imperium", National Museum, Gdańsk <em>(Oct 2016 – Jan 2017)</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2016</span>
+        <span class="cv-content">"Das Neue Bestiarium", Abbaye de Neumünster, Luxembourg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2013</span>
+        <span class="cv-content">"Atlantis", Collegio Armeno Moorat Raphael, Venice</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2012</span>
+        <span class="cv-content">"Vulcano", Ashmolean Museum, Oxford</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2012</span>
+        <span class="cv-content">Paintings and Graphic, State Russian Museum, Saint-Petersburg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2012</span>
+        <span class="cv-content">"Vulcanus. Satires dans tous les sens", Musée du Montparnasse, Paris</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2010</span>
+        <span class="cv-content">Snite Museum of Art, University of Notre Dame, United States</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2004–07</span>
+        <span class="cv-content">"New Empire" — Felix-Nussbaum-Haus, Osnabrück; Querini Stampalia, Venice; Ulster Museum, Belfast; Abbaye de Neumünster; Akademie der Künste, Berlin; Museum Küppersmühle, Duisburg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2003</span>
+        <span class="cv-content">World Economic Forum, Arts and Culture, Davos</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2001–02</span>
+        <span class="cv-content">"Ödland — Ein Atlas", Städel, Frankfurt; State Tretyakov Gallery, Moscow; museums in Vladivostok, Krasnoyarsk, Novosibirsk</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2001–02</span>
+        <span class="cv-content">Ulster Museum, Belfast; South Australian Gallery, Adelaide</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">1998–00</span>
+        <span class="cv-content">Schirn Kunsthalle Frankfurt; touring Wisconsin, Illinois, Florida; Ulster Museum; Musée Villa Vauban, Luxembourg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">1997–98</span>
+        <span class="cv-content">State Pushkin Museum of Fine Arts, Moscow</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">1996</span>
+        <span class="cv-content">Kunsthalle Rostock; Herning Kunstmuseum, Denmark; Musée de Pully; Royal College of Art, London</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">1992</span>
+        <span class="cv-content">"Retrospektive", Museum Bochum</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">1988</span>
+        <span class="cv-content">Galerie Eva Poll, Berlin; Museum Hedendaagse Kunst, Utrecht</span>
+      </div>
+
+    </div>
   </div>
 
-  <div class="cv-section">
-    <h2>Selected Solo Exhibitions</h2>
-    <ul class="cv-list">
-      <li><span class="year">2025</span><span>New Paintings — To be announced</span></li>
-      <li><span class="year">—</span><span>Further exhibition history to be completed</span></li>
-    </ul>
+  <!-- 2 ─ Group Exhibitions ────────────────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Selected Group Exhibitions</h2>
+    <div class="cv-table">
+      <p class="cv-placeholder">To be updated.</p>
+    </div>
   </div>
 
-  <div class="cv-section">
-    <h2>Selected Group Exhibitions</h2>
-    <ul class="cv-list">
-      <li><span class="year">—</span><span>Venice Biennale</span></li>
-      <li><span class="year">—</span><span>Major European institutional exhibitions</span></li>
-      <li><span class="year">—</span><span>Further exhibition history to be completed</span></li>
-    </ul>
+  <!-- 3 ─ Collections ─────────────────────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Museum &amp; Institutional Collections</h2>
+    <div class="collections-grid" style="margin-top: 8px;">
+      <div class="collection-item"><p class="institution">State Tretyakov Gallery</p><p class="location">Moscow, Russia</p></div>
+      <div class="collection-item"><p class="institution">The British Museum</p><p class="location">London, United Kingdom</p></div>
+      <div class="collection-item"><p class="institution">Museum Bochum</p><p class="location">Bochum, Germany</p></div>
+      <div class="collection-item"><p class="institution">Sprengel Museum</p><p class="location">Hannover, Germany</p></div>
+      <div class="collection-item"><p class="institution">Städel Museum</p><p class="location">Frankfurt am Main, Germany</p></div>
+      <div class="collection-item"><p class="institution">Felix-Nussbaum-Haus</p><p class="location">Osnabrück, Germany</p></div>
+      <div class="collection-item"><p class="institution">South Australian Gallery</p><p class="location">Adelaide, Australia</p></div>
+      <div class="collection-item"><p class="institution">Luxembourg National Museum of History and Art</p><p class="location">Luxembourg City</p></div>
+      <div class="collection-item"><p class="institution">State Russian Museum</p><p class="location">Saint-Petersburg, Russia</p></div>
+      <div class="collection-item"><p class="institution">Academy of Fine Arts</p><p class="location">Vienna, Austria</p></div>
+      <div class="collection-item"><p class="institution">National Museum</p><p class="location">Gdańsk, Poland</p></div>
+      <div class="collection-item"><p class="institution">Pembroke College, Oxford</p><p class="location">Quadriptych "Pembroke Altar", Common Room</p></div>
+      <div class="collection-item"><p class="institution">Pontifical Academy of Sciences</p><p class="location">Rome, Italy</p></div>
+      <div class="collection-item"><p class="institution">Federal Foreign Office</p><p class="location">Berlin, Germany — Genscher Saal</p></div>
+      <div class="collection-item"><p class="institution">Église Saint-Merry</p><p class="location">Paris, France</p></div>
+      <div class="collection-item"><p class="institution">Brussels Cathedral</p><p class="location">Brussels, Belgium</p></div>
+      <div class="collection-item"><p class="institution">Chapel of Resurrection, LSRS</p><p class="location">Luxembourg City</p></div>
+      <div class="collection-item"><p class="institution">National Libraries</p><p class="location">France, Austria, Luxembourg — Etching portfolios</p></div>
+    </div>
   </div>
 
-  <div class="cv-section">
-    <h2>Books &amp; Publications</h2>
-    <ul class="cv-list">
-      <li><span class="year">—</span><span>Novel and essay publications translated into multiple European languages</span></li>
-      <li><span class="year">—</span><span>Full bibliography to be completed</span></li>
-    </ul>
+  <!-- 4 ─ Literary Publications ──────────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Books &amp; Publications</h2>
+    <div class="cv-table">
+      <div class="cv-row">
+        <span class="cv-year">2021</span>
+        <span class="cv-content"><em>Thistle and Thorn</em> — philosophy of art and social history of Europe</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2018</span>
+        <span class="cv-content"><em>Hazard</em> (novel, German edition)</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2017</span>
+        <span class="cv-content"><em>Hazard</em> (novel)</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2016</span>
+        <span class="cv-content"><em>The Thistle — Philosophy of Painting</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2016</span>
+        <span class="cv-content"><em>Red Light</em> — French translation, Louison Éditions (<em>Feu Rouge</em>, preface by Éric Naulleau)</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2013</span>
+        <span class="cv-content"><em>Red Light</em> (novel) — shortlist National Bestseller &amp; Big Book awards</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2008–15</span>
+        <span class="cv-content">Political essays: <em>Slow Jaws of Democracy</em>, <em>The Strategy of Leviathan</em>, <em>An Empire Turned Inside Out</em>, <em>One is Enough</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2006</span>
+        <span class="cv-content"><em>Textbook of Drawing</em> (novel) — shortlist Big Book 2007</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 ─ Artist Books & Portfolios ──────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Artist Books &amp; Portfolios</h2>
+    <div class="cv-table">
+      <div class="cv-row">
+        <span class="cv-year">2018</span>
+        <span class="cv-content"><em>Faust</em> — artist book</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2014</span>
+        <span class="cv-content"><em>The Ballades of Robin Hood</em> — artist book</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2013</span>
+        <span class="cv-content">Heinrich von Kleist — <em>Die Hermannsschlacht</em> — artist book</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2010</span>
+        <span class="cv-content"><em>Vulcanus. Atlas</em> — etching portfolio. National Libraries of France, Austria, Luxembourg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2004</span>
+        <span class="cv-content"><em>Metropolis. Atlas</em> — etching portfolio</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2000–01</span>
+        <span class="cv-content"><em>Wasteland. Atlas</em> — etching portfolio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 ─ Selected Press ──────────────────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Selected Press</h2>
+    <div class="cv-table">
+      <div class="cv-row">
+        <span class="cv-year">2025</span>
+        <span class="cv-content">Coverage of "Gesichter — Visages — Faces", Luxembourg School of Religion &amp; Society</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2024</span>
+        <span class="cv-content">Coverage of "Der Zeuge — The Witness", University of Bamberg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2022</span>
+        <span class="cv-content">Coverage of "The Rape of Europe", National Museum of History and Art, Luxembourg</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 ─ Publications ───────────────────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Publications</h2>
+    <div class="cv-table">
+      <div class="cv-row">
+        <span class="cv-year">2021</span>
+        <span class="cv-content"><em>Thistle and Thorn</em> — philosophy of art and social history of Europe; based on lecture courses at Notre Dame, Cambridge and Oxford</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2018</span>
+        <span class="cv-content"><em>Hazard</em> — novel, with German edition (2018)</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2016</span>
+        <span class="cv-content"><em>The Thistle — Philosophy of Painting</em> — essay on art history</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2013</span>
+        <span class="cv-content"><em>Red Light</em> — novel; shortlisted National Bestseller &amp; Big Book awards; translated into French (<em>Feu Rouge</em>, Louison Éditions, 2016) and German (<em>Rotes Licht</em>, Paul Zsolnay Verlag, 2018)</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2006</span>
+        <span class="cv-content"><em>Textbook of Drawing</em> — novel; shortlisted Big Book award 2007</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">1993</span>
+        <span class="cv-content"><em>House in Wasteland</em> — stories, with author's illustrations</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7b ─ Livres d'Artiste ───────────────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Livres d'Artiste</h2>
+    <div class="cv-table">
+      <div class="cv-row">
+        <span class="cv-year">2018</span>
+        <span class="cv-content"><em>Faust</em> — text and illustrations by Kantor</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2014</span>
+        <span class="cv-content"><em>The Ballades of Robin Hood</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2013</span>
+        <span class="cv-content">Heinrich von Kleist — <em>Die Hermannsschlacht</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2010</span>
+        <span class="cv-content"><em>Vulcanus. Atlas</em> — etching portfolio; acquired by National Libraries of France, Austria, Luxembourg</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2004</span>
+        <span class="cv-content"><em>Metropolis. Atlas</em> — etching portfolio</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2000</span>
+        <span class="cv-content"><em>Wasteland. Atlas</em> — etching portfolio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7c ─ Symposiums & Lectures ─────────────────────────────────────── -->
+  <div class="cv-section-wrap">
+    <h2 class="cv-section-title">Symposiums &amp; Lectures</h2>
+    <div class="cv-table">
+      <div class="cv-row">
+        <span class="cv-year">2022</span>
+        <span class="cv-content">International Conference <em>Painting as a Spiritual Path in Difficult Times</em> — Chapel of Resurrection, Luxembourg School of Religion and Society</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2019</span>
+        <span class="cv-content">Exhibition and International Conference <em>The Last Judgement</em> — Saint-Michael's Church, Luxembourg; with professors from Bamberg, Cambridge, Luxembourg, Oxford, Torino</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2018</span>
+        <span class="cv-content">Interdisciplinary Symposium <em>Das Jüngste Gericht — Von Bosch bis Kantor</em>; Symposium in Bamberg University <em>Beauty, Goodness, Strength</em></span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2016</span>
+        <span class="cv-content"><em>Democracy as a Challenge of Our Times</em> — European Solidarity Center, Gdańsk</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2014</span>
+        <span class="cv-content"><em>The Rape of Europe</em> — Graduate Institute of International Relations, Geneva</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2013</span>
+        <span class="cv-content"><em>Atlantis and Utopia</em> — Palazzo Zenobio, Venice</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2012</span>
+        <span class="cv-content"><em>Vulcano: Art and Politics in the Period of Crisis of European Ideals</em> — University of Oxford / Ashmolean Museum</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 ─ Academic & Institutional ───────────────────────────────────── -->
+  <div class="cv-section-wrap" style="margin-bottom: 80px;">
+    <h2 class="cv-section-title">Academic &amp; Institutional</h2>
+    <div class="cv-table">
+      <div class="cv-row">
+        <span class="cv-year">2019</span>
+        <span class="cv-content">Artist in Residence, Luxembourg School of Religion and Society</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2015</span>
+        <span class="cv-content">Visiting Professor, University of Notre Dame, Indiana</span>
+      </div>
+      <div class="cv-row">
+        <span class="cv-year">2013</span>
+        <span class="cv-content">Honorary Fellow, Pembroke College, Oxford</span>
+      </div>
+    </div>
   </div>
 
 </div>
 
 <footer>
-  <span>© 2025 Maxim Kantor</span>
-  <span>All rights reserved</span>
+  <div class="footer-left">
+    <span>© 2025 Maxim Kantor</span>
+    <span style="color:#ddd">·</span>
+    <span>All rights reserved</span>
+    <span style="color:#ddd">·</span>
+    <a href="mailto:maxim.kantor@pmb.ox.ac.uk" style="color:#999;">maxim.kantor@pmb.ox.ac.uk</a>
+  </div>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/maxim.kantor2026/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram" style="color:#999;display:inline-flex;align-items:center;gap:7px;font-size:0.62rem;letter-spacing:0.12em;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+      @maxim.kantor2026
+    </a>
+  </div>
 </footer>
 
-<script>
-function toggleNav() {
-  document.getElementById('nav-links').classList.toggle('open');
-}
-</script>
+<script src="main.js"></script>
 </body>
 </html>

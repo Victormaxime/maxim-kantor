@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications — Maxim Kantor</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .pub-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+    .pub-section {
+      padding: 3.5rem 0;
+      border-top: 1px solid rgba(245,244,240,0.12);
+    }
+    .pub-section-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 2.5rem;
+    }
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .pub-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .pub-year {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: var(--fg-muted);
+      padding-top: 0.35rem;
+    }
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 300;
+      color: var(--fg);
+      margin-bottom: 0.4rem;
+      font-style: italic;
+    }
+    .pub-subtitle {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--fg-muted);
+      line-height: 1.6;
+    }
+    .pub-coming-soon {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245,244,240,0.2);
+      padding: 2rem;
+      border: 1px solid rgba(245,244,240,0.07);
+      text-align: center;
+    }
+    .speech-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(245,244,240,0.07);
+    }
+    .speech-item:last-child { border-bottom: none; }
+    .speech-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--fg);
+      margin-bottom: 0.3rem;
+    }
+    .speech-meta {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--fg-muted);
+    }
+    @media (max-width: 600px) {
+      .pub-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .pub-year { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Maxim Kantor</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="works.html">Works</a></li>
+    <li><a href="installations.html">Installations</a></li>
+    <li><a href="biography.html">Biography</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="publications.html" class="active">Publications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Publications</h1>
+</div>
+
+<div class="pub-body">
+
+  <!-- Novels -->
+  <div class="pub-section">
+    <p class="pub-section-label">Novels</p>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="pub-year">2006</span>
+        <div>
+          <p class="pub-title">Textbook of Drawing</p>
+          <p class="pub-subtitle">Monumental novel. Shortlist, Big Book Award 2007.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2013</span>
+        <div>
+          <p class="pub-title">Red Light</p>
+          <p class="pub-subtitle">Shortlist, National Bestseller & Big Book Awards. Translated into French (<em>Feu Rouge</em>, Louison Éditions, 2016, pref. Éric Naulleau) and German (<em>Rotes Licht</em>, Paul Zsolnay Verlag, 2018).</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2017</span>
+        <div>
+          <p class="pub-title">Hazard</p>
+          <p class="pub-subtitle">Novel with text and illustrations by Kantor. German edition 2018.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">1993</span>
+        <div>
+          <p class="pub-title">House in Wasteland</p>
+          <p class="pub-subtitle">Book of stories with illustrations by the author.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Art History & Essays -->
+  <div class="pub-section">
+    <p class="pub-section-label">Art History & Essays</p>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="pub-year">2021</span>
+        <div>
+          <p class="pub-title">The Thistle and the Thorn</p>
+          <p class="pub-subtitle">Philosophy of art and social history of Europe. Based on lecture courses at Notre Dame University, Cambridge and Oxford.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2016</span>
+        <div>
+          <p class="pub-title">The Thistle — Philosophy of Painting</p>
+          <p class="pub-subtitle"><em>Chertopolokh – Philosophia jivopisj.</em></p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2015</span>
+        <div>
+          <p class="pub-title">An Empire Turned Inside Out</p>
+          <p class="pub-subtitle">Political writings.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2014</span>
+        <div>
+          <p class="pub-title">The Strategy of Leviathan</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2010</span>
+        <div>
+          <p class="pub-title">One is Enough / Dustpan and Broom</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2008</span>
+        <div>
+          <p class="pub-title">Slow Jaws of Democracy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Artist Books -->
+  <div class="pub-section">
+    <p class="pub-section-label">Artist Books — Livres d'Artiste</p>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="pub-year">2018</span>
+        <div>
+          <p class="pub-title">Faust</p>
+          <p class="pub-subtitle">After Goethe. Text and illustrations by Kantor.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2014</span>
+        <div>
+          <p class="pub-title">The Ballades of Robin Hood</p>
+          <p class="pub-subtitle">Lithographies and text. Publisher: Wittrock Kunsthandel.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2013</span>
+        <div>
+          <p class="pub-title">Die Hermannsschlacht</p>
+          <p class="pub-subtitle">After Heinrich von Kleist. Illustrated artist book.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2010</span>
+        <div>
+          <p class="pub-title">Vulcanus. Atlas</p>
+          <p class="pub-subtitle">Etching portfolio. In the collections of the National Libraries of France, Austria and Luxembourg.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2004</span>
+        <div>
+          <p class="pub-title">Metropolis. Atlas</p>
+          <p class="pub-subtitle">Etching portfolio.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2000</span>
+        <div>
+          <p class="pub-title">Wasteland. Atlas</p>
+          <p class="pub-subtitle">Etching portfolio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theatre -->
+  <div class="pub-section">
+    <p class="pub-section-label">Theatre</p>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="pub-year">2014</span>
+        <div>
+          <p class="pub-title">Robin Hood and Spiritual Buckles</p>
+          <p class="pub-subtitle">Puppet satire. Written, designed and built by Kantor. Private theatre, Berlin.</p>
+        </div>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2007</span>
+        <div>
+          <p class="pub-title">An Evening with a Baboon</p>
+          <p class="pub-subtitle">Collection of plays. Several staged in Russian theatres.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Press & Reviews -->
+  <div class="pub-section">
+    <p class="pub-section-label">Press & Reviews</p>
+    <div class="pub-coming-soon">Content coming soon</div>
+  </div>
+
+  <!-- Speeches & Lectures -->
+  <div class="pub-section">
+    <p class="pub-section-label">Speeches & Lectures</p>
+    <div class="pub-list">
+      <div class="speech-item">
+        <p class="speech-title">Painting as a Spiritual Path in Difficult Times</p>
+        <p class="speech-meta">International Conference — Luxembourg School of Religion and Society, Feb 2022</p>
+      </div>
+      <div class="speech-item">
+        <p class="speech-title">Das Jüngste Gericht – Von Bosch bis Kantor</p>
+        <p class="speech-meta">Interdisciplinary Symposium — Oct 2018</p>
+      </div>
+      <div class="speech-item">
+        <p class="speech-title">Beauty, Goodness, Strength</p>
+        <p class="speech-meta">Bamberg University — Oct 2018</p>
+      </div>
+      <div class="speech-item">
+        <p class="speech-title">Democracy as a Challenge of Our Times</p>
+        <p class="speech-meta">European Solidarity Center, Gdansk — 2016</p>
+      </div>
+      <div class="speech-item">
+        <p class="speech-title">The Rape of Europe</p>
+        <p class="speech-meta">Graduate Institute of International Relations, Geneva — 2014</p>
+      </div>
+      <div class="speech-item">
+        <p class="speech-title">Atlantis and Utopia</p>
+        <p class="speech-meta">Palazzo Zenobio, Venice — 2013</p>
+      </div>
+      <div class="speech-item">
+        <p class="speech-title">Vulcano: Art and Politics in the Period of Crisis</p>
+        <p class="speech-meta">University of Oxford, Dept. of Politics & International Relations — May 2012</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Drawings — placeholder -->
+  <div class="pub-section">
+    <p class="pub-section-label">Drawings & Graphics</p>
+    <div class="pub-coming-soon">Coming soon — a selection of drawings and graphic works will be presented here.</div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-left">
+    <span>© 2025 Maxim Kantor</span>
+    <span style="color:rgba(245,244,240,0.15)">·</span>
+    <span>All rights reserved</span>
+    <span style="color:rgba(245,244,240,0.15)">·</span>
+    <a href="mailto:maxim.kantor@pmb.ox.ac.uk">maxim.kantor@pmb.ox.ac.uk</a>
+  </div>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/maxim.kantor2026/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram" style="display:inline-flex;align-items:center;gap:7px;font-size:0.62rem;letter-spacing:0.12em;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+      @maxim.kantor2026
+    </a>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

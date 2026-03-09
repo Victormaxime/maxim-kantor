@@ -15,8 +15,10 @@
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="works.html">Works</a></li>
+    <li><a href="installations.html">Installations</a></li>
     <li><a href="biography.html" class="active">Biography</a></li>
     <li><a href="cv.html">CV</a></li>
+    <li><a href="publications.html">Publications</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
@@ -25,27 +27,65 @@
   <h1>Biography</h1>
 </div>
 
-<div class="content-wrap" style="padding-top: 48px;">
-  <p class="bio-text">
-    Maxim Kantor was born in 1957 in Moscow. A painter, writer and intellectual, he works in the tradition of European figurative painting — expressionist, symbolist, metaphysical realist. His canvases engage the great themes of Western civilization: war, faith, solitude, the fate of Europe. They speak through the body, through gesture, through the weight of matter.
-  </p>
-  <p class="bio-text" style="margin-top: 32px;">
-    His work is held in the permanent collections of the Tretyakov Gallery (Moscow), the British Museum (London), and the Bochum Art Museum (Germany). He has exhibited at major European institutions and participated in the Venice Biennale. He lives and works between France and the United Kingdom.
-  </p>
-  <p class="bio-text" style="margin-top: 32px;">
-    Alongside his painting, Kantor is the author of several novels and essays that have been translated into multiple European languages. His writing, like his painting, is concerned with the moral and political crisis of the contemporary world — with what it means to make art in the age of catastrophe.
-  </p>
+<div class="bio-layout">
+  <!-- Portrait -->
+  <div class="bio-portrait">
+    <div class="bio-portrait-img">
+      <img src="images/portrait-maxim.jpg" alt="Maxim Kantor" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <p class="bio-portrait-caption">Maxim Kantor</p>
+  </div>
+
+  <!-- Text -->
+  <div class="bio-text-block">
+    <p class="bio-text">
+      Maxim Kantor was born in 1957 in Moscow. A painter, writer and intellectual, he works in the tradition of European figurative painting — expressionist, symbolist, metaphysical realist. His canvases engage the great themes of Western civilisation: war, faith, solitude, the fate of Europe.
+    </p>
+    <p class="bio-text">
+      His work is held in the permanent collections of the Tretyakov Gallery (Moscow), the British Museum (London), the Bochum Museum, the Sprengel Museum (Hannover), the Städel (Frankfurt), the South Australian Gallery and others. He has participated in the Venice Biennale — representing Russia at the 47th edition in 1997 with the solo exhibition <em>Criminal Chronicle</em> — and has exhibited at the Ashmolean Museum (Oxford), the Akademie der Künste (Berlin), and major institutions across Europe, the United States and Central Asia.
+    </p>
+    <p class="bio-text">
+      Site-specific monumental works are installed at the Pontifical Academy of Sciences in Rome, the Federal Foreign Office (Berlin), Pembroke College (Oxford), the Chapel of Resurrection at the Luxembourg School of Religion and Society, Église Saint-Merry (Paris), and the Brussels Cathedral.
+    </p>
+    <p class="bio-text">
+      An Honorary Fellow of Pembroke College, Oxford, he has been a visiting professor at the University of Notre Dame (Indiana) and artist in residence at the Luxembourg School of Religion and Society. His scholarly symposiums — organised in partnership with Oxford, Cambridge, Bamberg and Luxembourg Universities — address the intersections of art, politics and European thought.
+    </p>
+    <p class="bio-text">
+      Alongside his painting, Kantor is the author of several novels including <em>Textbook of Drawing</em> (2006) and <em>Red Light</em> (2013, translated into French, German and other European languages), and essay collections on art history and political philosophy. As a printmaker in the tradition of the <em>livre d'artiste</em>, he has produced illustrated editions of Kleist, Robin Hood ballads and Faust, and three monumental etching atlases — <em>Wasteland</em>, <em>Metropolis</em> and <em>Vulcanus</em> — acquired by the National Libraries of France, Austria and Luxembourg.
+    </p>
+    <p class="bio-text">
+      Maxim Kantor lives and works between France and the United Kingdom.
+    </p>
+
+    <div style="display: flex; gap: 32px; flex-wrap: wrap; margin-top: 56px;">
+      <a href="works.html" class="page-nav-link">
+        View Works
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="cv.html" class="page-nav-link">
+        Full CV &amp; Exhibitions
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
 </div>
 
 <footer>
-  <span>© 2025 Maxim Kantor</span>
-  <span>All rights reserved</span>
+  <div class="footer-left">
+    <span>© 2025 Maxim Kantor</span>
+    <span style="color:rgba(245,244,240,0.15)">·</span>
+    <span>All rights reserved</span>
+    <span style="color:rgba(245,244,240,0.15)">·</span>
+    <a href="mailto:maxim.kantor@pmb.ox.ac.uk">maxim.kantor@pmb.ox.ac.uk</a>
+  </div>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/maxim.kantor2026/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram" style="display:inline-flex;align-items:center;gap:7px;font-size:0.62rem;letter-spacing:0.12em;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+      @maxim.kantor2026
+    </a>
+  </div>
 </footer>
 
-<script>
-function toggleNav() {
-  document.getElementById('nav-links').classList.toggle('open');
-}
-</script>
+<script src="main.js"></script>
 </body>
 </html>

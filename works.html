@@ -15,8 +15,10 @@
   </button>
   <ul class="nav-links" id="nav-links">
     <li><a href="works.html" class="active">Works</a></li>
+    <li><a href="installations.html">Installations</a></li>
     <li><a href="biography.html">Biography</a></li>
     <li><a href="cv.html">CV</a></li>
+    <li><a href="publications.html">Publications</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
@@ -25,156 +27,504 @@
   <h1>Works</h1>
 </div>
 
-<p class="section-label">Paintings 2025</p>
+<div class="works-filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="2026">2026</button>
+  <button class="filter-btn" data-filter="2025">2025</button>
+  <button class="filter-btn empty" disabled title="Coming soon">2016–2019</button>
+  <button class="filter-btn empty" disabled title="Coming soon">2014</button>
+  <button class="filter-btn empty" disabled title="Coming soon">2005</button>
+  <button class="filter-btn" data-filter="drawing">Drawings &amp; Graphics</button>
+  <button class="filter-btn empty" disabled title="Coming soon">Sculpture</button>
+</div>
 
 <div class="gallery-grid" id="gallery">
-  <div class="gallery-item" onclick="openLightbox(0)">
-    <img src="images/battle-of-the-centaur.jpg" alt="Battle of the Centaur" loading="lazy">
-    <div class="caption">
-      <h3>Battle of the Centaur</h3>
-      <p>2025 &middot; Oil on canvas &middot; 200×200 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(0)">
+    <div class="gallery-img-wrap">
+      <img src="images/battle-of-the-centaur.jpg" alt="Battle of the Centaur" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Battle of the Centaur</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Battle of the Centaur</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(1)">
-    <img src="images/sphinx.jpg" alt="Sphinx" loading="lazy">
-    <div class="caption">
-      <h3>Sphinx</h3>
-      <p>2025 &middot; Oil on canvas &middot; 230×170 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(1)">
+    <div class="gallery-img-wrap">
+      <img src="images/sphinx.jpg" alt="Sphinx" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Sphinx</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Sphinx</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(2)">
-    <img src="images/saint-christopher.jpg" alt="Saint Christopher" loading="lazy">
-    <div class="caption">
-      <h3>Saint Christopher</h3>
-      <p>2025 &middot; Oil on canvas &middot; 200×150 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(2)">
+    <div class="gallery-img-wrap">
+      <img src="images/saint-christopher.jpg" alt="Saint Christopher" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Saint Christopher</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Saint Christopher</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(3)">
-    <img src="images/saint-francis.jpg" alt="Saint Francis" loading="lazy">
-    <div class="caption">
-      <h3>Saint Francis</h3>
-      <p>2025 &middot; Oil on canvas &middot; 200×150 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(3)">
+    <div class="gallery-img-wrap">
+      <img src="images/saint-francis.jpg" alt="Saint Francis" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Saint Francis</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Saint Francis</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(4)">
-    <img src="images/saint-sebastian.jpg" alt="Saint Sebastian" loading="lazy">
-    <div class="caption">
-      <h3>Saint Sebastian</h3>
-      <p>2025 &middot; Oil on canvas &middot; 240×90 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(4)">
+    <div class="gallery-img-wrap">
+      <img src="images/saint-sebastian.jpg" alt="Saint Sebastian" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Saint Sebastian</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Saint Sebastian</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(5)">
-    <img src="images/rabbi.jpg" alt="Rabbi" loading="lazy">
-    <div class="caption">
-      <h3>Rabbi</h3>
-      <p>2025 &middot; Oil on canvas &middot; 120×120 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(5)">
+    <div class="gallery-img-wrap">
+      <img src="images/rabbi.jpg" alt="Rabbi" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Rabbi</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Rabbi</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(6)">
-    <img src="images/geography-lessons.jpg" alt="Geography Lessons" loading="lazy">
-    <div class="caption">
-      <h3>Geography Lessons</h3>
-      <p>2025 &middot; Oil on canvas &middot; 100×120 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(6)">
+    <div class="gallery-img-wrap">
+      <img src="images/geography-lessons.jpg" alt="Geography Lessons" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Geography Lessons</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Geography Lessons</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(7)">
-    <img src="images/crows.jpg" alt="Crows" loading="lazy">
-    <div class="caption">
-      <h3>Crows</h3>
-      <p>2025 &middot; Oil on canvas &middot; 80×100 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(7)">
+    <div class="gallery-img-wrap">
+      <img src="images/crows.jpg" alt="Crows" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Crows</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Crows</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(8)">
-    <img src="images/palette-1.jpg" alt="Palette" loading="lazy">
-    <div class="caption">
-      <h3>Palette</h3>
-      <p>2025 &middot; Oil on canvas &middot; 80×100 cm</p>
+
+  <div class="gallery-item" data-period="2025" onclick="openLightbox(8)">
+    <div class="gallery-img-wrap">
+      <img src="images/ocean-shore.jpg" alt="Ocean Shore" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Ocean Shore</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Ocean Shore</span>
+      <span class="gallery-caption-year">2025</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(9)">
-    <img src="images/palette-2.jpg" alt="Palette II" loading="lazy">
-    <div class="caption">
-      <h3>Palette II</h3>
-      <p>2025 &middot; Oil on canvas &middot; 80×100 cm</p>
+
+  <div class="gallery-item" data-period="2026" onclick="openLightbox(9)">
+    <div class="gallery-img-wrap">
+      <img src="images/jacket-and-palette.jpg" alt="Jacket and Palette" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Jacket and Palette</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Jacket and Palette</span>
+      <span class="gallery-caption-year">2026</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(10)">
-    <img src="images/ocean-shore.jpg" alt="Ocean Shore" loading="lazy">
-    <div class="caption">
-      <h3>Ocean Shore</h3>
-      <p>2025 &middot; Oil on canvas &middot; 59×150 cm</p>
+
+  <!-- Drawings & Lithographies -->
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(10)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_01.jpg" alt="Drawing I" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing I</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing I</span>
+      <span class="gallery-caption-year">Lithograph</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(11)">
-    <img src="images/seascape-1.jpg" alt="Seascape" loading="lazy">
-    <div class="caption">
-      <h3>Seascape</h3>
-      <p>2025 &middot; Oil on canvas &middot; 50×80 cm</p>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(11)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_02.jpg" alt="Drawing II" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing II</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing II</span>
+      <span class="gallery-caption-year">Lithograph</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(12)">
-    <img src="images/seascape-2.jpg" alt="Sea Scape" loading="lazy">
-    <div class="caption">
-      <h3>Sea Scape</h3>
-      <p>2025 &middot; Oil on canvas &middot; Oil on canvas</p>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(12)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_03.jpg" alt="Drawing III" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing III</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing III</span>
+      <span class="gallery-caption-year">Lithograph</span>
     </div>
   </div>
-  <div class="gallery-item" onclick="openLightbox(13)">
-    <img src="images/shore.jpg" alt="Shore" loading="lazy">
-    <div class="caption">
-      <h3>Shore</h3>
-      <p>2025 &middot; Oil on canvas</p>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(13)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_04.jpg" alt="Drawing IV" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing IV</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing IV</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(14)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_05.jpg" alt="Drawing V" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing V</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing V</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(15)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_1.jpg" alt="Drawing VI" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing VI</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing VI</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(16)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_2.jpg" alt="Drawing VII" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing VII</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing VII</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(17)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_3.jpg" alt="Drawing VIII" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing VIII</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing VIII</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(18)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_4.jpg" alt="Drawing IX" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing IX</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing IX</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(19)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_5.jpg" alt="Drawing X" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing X</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing X</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(20)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_6.jpg" alt="Drawing XI" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XI</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XI</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(21)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_7.jpg" alt="Drawing XII" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XII</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XII</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(22)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_8.jpg" alt="Drawing XIII" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XIII</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XIII</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(23)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_9.jpg" alt="Drawing XIV" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XIV</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XIV</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(24)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_10.jpg" alt="Drawing XV" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XV</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XV</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(25)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_11.jpg" alt="Drawing XVI" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XVI</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XVI</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(26)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_12.jpg" alt="Drawing XVII" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XVII</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XVII</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(27)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_13.jpg" alt="Drawing XVIII" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XVIII</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XVIII</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+  <div class="gallery-item" data-period="drawing" onclick="openLightbox(28)">
+    <div class="gallery-img-wrap">
+      <img src="images/drawing_14.jpg" alt="Drawing XIX" loading="lazy">
+      <div class="gallery-hover-overlay"><span class="gallery-hover-title">Drawing XIX</span></div>
+    </div>
+    <div class="gallery-caption">
+      <span class="gallery-caption-title">Drawing XIX</span>
+      <span class="gallery-caption-year">Lithograph</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Inquire -->
+<div style="max-width:1100px;margin:0 auto;padding:0 2rem 3rem;border-top:1px solid rgba(245,244,240,0.1);">
+  <p style="font-family:var(--sans);font-size:0.82rem;color:rgba(245,244,240,0.45);line-height:1.7;margin-top:2.5rem;font-style:italic;">
+    For any inquiry please contact Mr Maxim Kantor at the following mail address:
+    <a href="mailto:maxim.kantor@pmb.ox.ac.uk" style="color:rgba(245,244,240,0.65);text-decoration:none;border-bottom:1px solid rgba(245,244,240,0.2);">maxim.kantor@pmb.ox.ac.uk</a>
+  </p>
+</div>
+
+<!-- Artist Books -->
+<div style="max-width:1100px;margin:0 auto;padding:0 2rem 2rem;">
+  <div style="border-top:1px solid rgba(245,244,240,0.15);padding-top:4rem;margin-top:1rem;">
+    <h2 style="font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;color:var(--fg);margin-bottom:0.5rem;">Artist Books</h2>
+    <p style="font-family:var(--sans);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:3rem;">Livres d'artiste — Lithographies</p>
+
+    <!-- Hermannsschlacht -->
+    <div style="margin-bottom:5rem;">
+      <p style="font-family:var(--sans);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:0.75rem;">Heinrich von Kleist · 2013</p>
+      <h3 style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.7rem);font-weight:300;color:var(--fg);margin-bottom:1rem;">Hermannsschlacht</h3>
+      <p style="font-family:var(--sans);font-size:0.88rem;line-height:1.8;color:var(--fg-dim);margin-bottom:2.5rem;max-width:640px;">
+        A livre d'artiste conceived around Heinrich von Kleist's drama <em>Die Hermannsschlacht</em>.
+        Fifteen original lithographs — a meditation on mythology, resistance and the fate of Europe,
+        in the tradition of Goya and Daumier.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0.75rem;">
+        <img src="images/bitva-0.jpg" alt="Hermannsschlacht I" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',0)">
+        <img src="images/bitva-1.jpg" alt="Hermannsschlacht II" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',1)">
+        <img src="images/bitva-2.jpg" alt="Hermannsschlacht III" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',2)">
+        <img src="images/bitva-3.jpg" alt="Hermannsschlacht IV" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',3)">
+        <img src="images/bitva-4.jpg" alt="Hermannsschlacht V" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',4)">
+        <img src="images/bitva-5.jpg" alt="Hermannsschlacht VI" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',5)">
+        <img src="images/bitva-6.jpg" alt="Hermannsschlacht VII" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',6)">
+        <img src="images/bitva-7.jpg" alt="Hermannsschlacht VIII" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',7)">
+        <img src="images/bitva-8.jpg" alt="Hermannsschlacht IX" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',8)">
+        <img src="images/bitva-9.jpg" alt="Hermannsschlacht X" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',9)">
+        <img src="images/bitva-10.jpg" alt="Hermannsschlacht XI" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',10)">
+        <img src="images/bitva-11.jpg" alt="Hermannsschlacht XII" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',11)">
+        <img src="images/bitva-12.jpg" alt="Hermannsschlacht XIII" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',12)">
+        <img src="images/bitva-13.jpg" alt="Hermannsschlacht XIV" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',13)">
+        <img src="images/bitva-14.jpg" alt="Hermannsschlacht XV" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('hermanns',14)">
+      </div>
+    </div>
+
+    <!-- Goethe Faust -->
+    <div>
+      <p style="font-family:var(--sans);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:0.75rem;">Goethe · 2018</p>
+      <h3 style="font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.7rem);font-weight:300;color:var(--fg);margin-bottom:1rem;">Faust</h3>
+      <p style="font-family:var(--sans);font-size:0.88rem;line-height:1.8;color:var(--fg-dim);margin-bottom:2.5rem;max-width:640px;">
+        A livre d'artiste inspired by Goethe's <em>Faust</em>. Ten original lithographs
+        — dark, monumental, saturated with the drama of Faust's pact. Each plate is
+        a full-scale composition exploring the themes of knowledge, temptation and redemption.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:0.75rem;">
+        <img src="images/faust-1.jpg" alt="Faust I" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',0)">
+        <img src="images/faust-2.jpg" alt="Faust II" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',1)">
+        <img src="images/faust-3.jpg" alt="Faust III" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',2)">
+        <img src="images/faust-4.jpg" alt="Faust IV" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',3)">
+        <img src="images/faust-5.jpg" alt="Faust V" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',4)">
+        <img src="images/faust-6.jpg" alt="Faust VI" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',5)">
+        <img src="images/faust-7.jpg" alt="Faust VII" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',6)">
+        <img src="images/faust-8.jpg" alt="Faust VIII" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',7)">
+        <img src="images/faust-9.jpg" alt="Faust IX" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',8)">
+        <img src="images/faust-10.jpg" alt="Faust X" style="width:100%;aspect-ratio:2/1;object-fit:cover;display:block;cursor:pointer;" onclick="openBookLightbox('faust',9)">
+      </div>
     </div>
   </div>
 </div>
 
-<div class="section-placeholder">
-  <h2>Earlier Works</h2>
-  <p>Archives from 2005, 2014 and 2016–2019 — to be added.</p>
+<!-- Book lightbox -->
+<div id="book-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;">
+  <button onclick="closeBookLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#f5f4f0;cursor:pointer;font-size:1.8rem;line-height:1;">×</button>
+  <button onclick="prevBook()" style="position:absolute;left:1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:#f5f4f0;cursor:pointer;font-size:2rem;line-height:1;">‹</button>
+  <img id="book-lightbox-img" src="" alt="" style="max-height:90vh;max-width:90vw;object-fit:contain;">
+  <button onclick="nextBook()" style="position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);background:none;border:none;color:#f5f4f0;cursor:pointer;font-size:2rem;line-height:1;">›</button>
 </div>
-
-<div class="section-placeholder">
-  <h2>Drawings &amp; Graphics</h2>
-  <p>Robin Hood Lithographs &middot; Faust Lithographs — to be added.</p>
-</div>
-
-<div class="section-placeholder">
-  <h2>Sculpture</h2>
-  <p>Coming soon.</p>
-</div>
+<script>
+const bookSeries = {
+  hermanns: Array.from({length:15},(_,i)=>`images/bitva-${i}.jpg`),
+  faust: Array.from({length:10},(_,i)=>`images/faust-${i+1}.jpg`),
+};
+let _bookSeries='', _bookIdx=0;
+function openBookLightbox(series, idx){
+  _bookSeries=series; _bookIdx=idx;
+  document.getElementById('book-lightbox-img').src=bookSeries[series][idx];
+  const lb=document.getElementById('book-lightbox');
+  lb.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeBookLightbox(){
+  document.getElementById('book-lightbox').style.display='none';
+  document.body.style.overflow='';
+}
+function prevBook(){
+  const s=bookSeries[_bookSeries];
+  _bookIdx=(_bookIdx-1+s.length)%s.length;
+  document.getElementById('book-lightbox-img').src=s[_bookIdx];
+}
+function nextBook(){
+  const s=bookSeries[_bookSeries];
+  _bookIdx=(_bookIdx+1)%s.length;
+  document.getElementById('book-lightbox-img').src=s[_bookIdx];
+}
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('book-lightbox').style.display==='flex'){
+    if(e.key==='ArrowLeft')prevBook();
+    if(e.key==='ArrowRight')nextBook();
+    if(e.key==='Escape')closeBookLightbox();
+  }
+});
+</script>
 
 <footer>
-  <span>© 2025 Maxim Kantor</span>
-  <span>All rights reserved</span>
+  <div class="footer-left">
+    <span>© 2025 Maxim Kantor</span>
+    <span style="color:rgba(245,244,240,0.15)">·</span>
+    <span>All rights reserved</span>
+    <span style="color:rgba(245,244,240,0.15)">·</span>
+    <a href="mailto:maxim.kantor@pmb.ox.ac.uk">maxim.kantor@pmb.ox.ac.uk</a>
+  </div>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/maxim.kantor2026/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram" style="display:inline-flex;align-items:center;gap:7px;font-size:0.62rem;letter-spacing:0.12em;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+      @maxim.kantor2026
+    </a>
+  </div>
 </footer>
 
 <!-- Lightbox -->
-<div class="lightbox-overlay" id="lightbox" onclick="closeLightboxOverlay(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">×</button>
-  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
-  <div class="lightbox-img-wrap">
-    <img id="lightbox-img" src="" alt="">
-    <p class="lightbox-caption" id="lightbox-caption"></p>
+<div class="lightbox-overlay" id="lightbox">
+  <div class="lightbox-header">
+    <span class="lightbox-counter" id="lightbox-counter">1 / 28</span>
+    <button class="lightbox-close" onclick="closeLightbox()">Close &nbsp;×</button>
   </div>
-  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+  <div class="lightbox-body">
+    <div class="lightbox-img-area">
+      <button class="lightbox-nav-btn lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+      <img id="lightbox-img" src="" alt="">
+      <button class="lightbox-nav-btn lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+    </div>
+    <div class="lightbox-sidebar">
+      <h2 id="lightbox-title"></h2>
+      <ul class="lightbox-meta" id="lightbox-meta"></ul>
+      <a id="lightbox-inquire" href="contact.html" class="lightbox-inquire">
+        → Inquire about this work
+      </a>
+    </div>
+  </div>
 </div>
 
+<script src="main.js"></script>
 <script>
 const works = [
-  { src: 'images/battle-of-the-centaur.jpg', title: 'Battle of the Centaur', info: '2025 · Oil on canvas · 200×200 cm' },
-  { src: 'images/sphinx.jpg', title: 'Sphinx', info: '2025 · Oil on canvas · 230×170 cm' },
-  { src: 'images/saint-christopher.jpg', title: 'Saint Christopher', info: '2025 · Oil on canvas · 200×150 cm' },
-  { src: 'images/saint-francis.jpg', title: 'Saint Francis', info: '2025 · Oil on canvas · 200×150 cm' },
-  { src: 'images/saint-sebastian.jpg', title: 'Saint Sebastian', info: '2025 · Oil on canvas · 240×90 cm' },
-  { src: 'images/rabbi.jpg', title: 'Rabbi', info: '2025 · Oil on canvas · 120×120 cm' },
-  { src: 'images/geography-lessons.jpg', title: 'Geography Lessons', info: '2025 · Oil on canvas · 100×120 cm' },
-  { src: 'images/crows.jpg', title: 'Crows', info: '2025 · Oil on canvas · 80×100 cm' },
-  { src: 'images/palette-1.jpg', title: 'Palette', info: '2025 · Oil on canvas · 80×100 cm' },
-  { src: 'images/palette-2.jpg', title: 'Palette II', info: '2025 · Oil on canvas · 80×100 cm' },
-  { src: 'images/ocean-shore.jpg', title: 'Ocean Shore', info: '2025 · Oil on canvas · 59×150 cm' },
-  { src: 'images/seascape-1.jpg', title: 'Seascape', info: '2025 · Oil on canvas · 50×80 cm' },
-  { src: 'images/seascape-2.jpg', title: 'Sea Scape', info: '2025 · Oil on canvas' },
-  { src: 'images/shore.jpg', title: 'Shore', info: '2025 · Oil on canvas' },
+  { src:'images/battle-of-the-centaur.jpg', title:'Battle of the Centaur', year:'2025', medium:'Oil on canvas', dims:'200 × 200 cm' },
+  { src:'images/sphinx.jpg',                title:'Sphinx',                 year:'2025', medium:'Oil on canvas', dims:'230 × 170 cm' },
+  { src:'images/saint-christopher.jpg',     title:'Saint Christopher',      year:'2025', medium:'Oil on canvas', dims:'200 × 150 cm' },
+  { src:'images/saint-francis.jpg',         title:'Saint Francis',          year:'2025', medium:'Oil on canvas', dims:'200 × 150 cm' },
+  { src:'images/saint-sebastian.jpg',       title:'Saint Sebastian',        year:'2025', medium:'Oil on canvas', dims:'240 × 90 cm' },
+  { src:'images/rabbi.jpg',                 title:'Rabbi',                  year:'2025', medium:'Oil on canvas', dims:'120 × 120 cm' },
+  { src:'images/geography-lessons.jpg',     title:'Geography Lessons',      year:'2025', medium:'Oil on canvas', dims:'100 × 120 cm' },
+  { src:'images/crows.jpg',                 title:'Crows',                  year:'2025', medium:'Oil on canvas', dims:'80 × 100 cm' },
+  { src:'images/ocean-shore.jpg',           title:'Ocean Shore',            year:'2025', medium:'Oil on canvas', dims:'59 × 150 cm' },
+  { src:'images/jacket-and-palette.jpg',   title:'Jacket and Palette',     year:'2026', medium:'Oil on canvas', dims:'170 × 120 cm' },
+  // Drawings & Lithographies
+  { src:'images/drawing_01.jpg', title:'Drawing I',    year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_02.jpg', title:'Drawing II',   year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_03.jpg', title:'Drawing III',  year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_04.jpg', title:'Drawing IV',   year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_05.jpg', title:'Drawing V',    year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_1.jpg',  title:'Drawing VI',   year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_2.jpg',  title:'Drawing VII',  year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_3.jpg',  title:'Drawing VIII', year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_4.jpg',  title:'Drawing IX',   year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_5.jpg',  title:'Drawing X',    year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_6.jpg',  title:'Drawing XI',   year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_7.jpg',  title:'Drawing XII',  year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_8.jpg',  title:'Drawing XIII', year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_9.jpg',  title:'Drawing XIV',  year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_10.jpg', title:'Drawing XV',   year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_11.jpg', title:'Drawing XVI',  year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_12.jpg', title:'Drawing XVII', year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_13.jpg', title:'Drawing XVIII',year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
+  { src:'images/drawing_14.jpg', title:'Drawing XIX',  year:'', medium:'Lithograph · Edition 30 · Signed · Numbered', dims:'' },
 ];
 let current = 0;
 
@@ -188,29 +538,42 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
-function closeLightboxOverlay(e) {
-  if (e.target === document.getElementById('lightbox')) closeLightbox();
-}
 function navLightbox(dir) {
   current = (current + dir + works.length) % works.length;
   updateLightbox();
 }
 function updateLightbox() {
   const w = works[current];
-  document.getElementById('lightbox-img').src = w.src;
-  document.getElementById('lightbox-img').alt = w.title;
-  document.getElementById('lightbox-caption').textContent = w.title + ' — ' + w.info;
+  const img = document.getElementById('lightbox-img');
+  img.classList.remove('loaded');
+  img.src = w.src;
+  img.alt = w.title;
+  img.onload = () => img.classList.add('loaded');
+  if (img.complete && img.naturalWidth) img.classList.add('loaded');
+
+  document.getElementById('lightbox-title').textContent = w.title;
+  document.getElementById('lightbox-counter').textContent = `${current + 1} / ${works.length}`;
+
+  const meta = document.getElementById('lightbox-meta');
+  meta.innerHTML = [
+    w.year   ? `<li>${w.year}</li>` : '',
+    w.medium ? `<li>${w.medium}</li>` : '',
+    w.dims   ? `<li>${w.dims}</li>` : '',
+  ].join('');
+
+  const inquire = document.getElementById('lightbox-inquire');
+  inquire.href = `contact.html?work=${encodeURIComponent(w.title)}`;
 }
-document.addEventListener('keydown', e => {
-  if (document.getElementById('lightbox').classList.contains('open')) {
-    if (e.key === 'ArrowLeft') navLightbox(-1);
-    if (e.key === 'ArrowRight') navLightbox(1);
-    if (e.key === 'Escape') closeLightbox();
-  }
+
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
 });
-function toggleNav() {
-  document.getElementById('nav-links').classList.toggle('open');
-}
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'ArrowLeft')  navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+  if (e.key === 'Escape')     closeLightbox();
+});
 </script>
 </body>
 </html>
