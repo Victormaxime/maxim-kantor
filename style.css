@@ -558,3 +558,26 @@ footer a:hover { color: var(--fg); }
   footer { padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
   .lightbox-sidebar { padding-bottom: calc(24px + env(safe-area-inset-bottom)); }
 }
+
+/* Book series section dividers */
+.gallery-section-divider {
+  column-span: all;
+  display: none; /* shown by JS when books filter active */
+  width: 100%;
+  padding: 3rem 0 1.5rem;
+  border-top: 1px solid rgba(245,244,240,0.12);
+  margin-bottom: 0.5rem;
+}
+.gallery-section-divider:first-of-type {
+  border-top: none;
+  padding-top: 0.5rem;
+}
+.gallery-section-divider span {
+  font-family: var(--serif);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245,244,240,0.38);
+  font-variant: small-caps;
+}

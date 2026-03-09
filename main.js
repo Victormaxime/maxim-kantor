@@ -77,6 +77,11 @@ function initGalleryFilters() {
         }
       });
 
+      // Section dividers: visible only on books filter
+      document.querySelectorAll('[data-books-divider]').forEach(div => {
+        div.style.display = (filter === 'books') ? '' : 'none';
+      });
+
       // Update lightbox indices after filter
       updateLightboxIndices();
     });
