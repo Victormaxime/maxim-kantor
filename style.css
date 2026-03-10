@@ -858,3 +858,13 @@ footer a:hover { color: var(--fg); }
 @media (max-width: 600px) {
   .atelier-grid { grid-template-columns: 1fr; padding: 0 1rem; }
 }
+
+/* ── Homepage — hide nav (splash page) ──────────────────── */
+body.home nav { display: none; }
+
+/* ── Explore overlay — improve label readability ─────────── */
+.explore-label {
+  background: rgba(0,0,0,0.42);
+  border-radius: 2px;
+  padding: 8px 16px;
+}
