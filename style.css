@@ -152,7 +152,7 @@ nav {
 }
 .filter-btn:hover { color: var(--fg-dim); }
 .filter-btn.active { color: var(--fg); border-bottom-color: var(--fg); }
-.filter-btn.empty { opacity: 0.35; cursor: default; }
+.filter-btn.empty { opacity: 0.35; cursor: default; pointer-events: none; }
 
 /* ─── GALLERY MASONRY ─────────────────────────────────────── */
 .gallery-grid {
@@ -615,7 +615,7 @@ footer a:hover { color: var(--fg); }
   width: 100%; height: 100%;
   object-fit: cover; object-position: center;
   transition: opacity 0.5s ease, transform 0.6s ease, filter 0.4s ease;
-  filter: brightness(0.55); transform: scale(1);
+  filter: brightness(0.5); transform: scale(1);
 }
 .explore-cell img.loaded { opacity: 1; }
 .explore-cell:hover img {
@@ -648,7 +648,7 @@ footer a:hover { color: var(--fg); }
   columns: 2 480px !important;
 }
 .paintings-grid .gallery-img-wrap img {
-  max-height: 780px !important;
+  max-height: 780px;
 }
 .paintings-grid .gallery-caption-year {
   display: block; font-size: 0.62rem; color: var(--fg-muted); margin-top: 2px;
@@ -751,11 +751,29 @@ footer a:hover { color: var(--fg); }
 }
 
 @media (max-width: 768px) {
+  /* Paintings */
   .paintings-grid { columns: 1 !important; }
+  .paintings-grid .gallery-img-wrap img { max-height: 480px; }
+
+  /* Graphic works */
   .etchings-list { padding: 32px 20px 48px; }
   .book-series-header { padding: 36px 20px 0; }
   .gallery-inquire-note { padding: 20px 20px 36px; }
   .coming-soon-panel { padding: 48px 20px; }
+  .etching-meta h2 { font-size: 1.4rem; }
+  .etching-desc { font-size: 0.83rem; }
+
+  /* Exhibitions — clear min-width on year col */
+  .exhibitions-list .cv-year { min-width: auto; }
+
+  /* Writings */
   .writings-list li { flex-direction: column; gap: 4px; }
   .writings-year { min-width: auto; }
+  .writings-entry em { font-size: 1rem; }
+  .writings-section-title { font-size: 1.3rem; }
+}
+
+@media (max-width: 480px) {
+  .paintings-grid .gallery-img-wrap img { max-height: 75vw; }
+  .hero-enter-btn { font-size: 0.6rem; padding: 10px 28px; letter-spacing: 0.22em; }
 }
