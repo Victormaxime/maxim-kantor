@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier — Maxim Kantor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Maxim Kantor</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="paintings.html">Paintings</a></li>
+    <li><a href="graphic-works.html">Graphic Works</a></li>
+    <li><a href="installations.html">Installations</a></li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li><a href="writings.html">Writings</a></li>
+    <li><a href="biography.html">Biography</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Atelier</h1>
+</div>
+
+<div class="page-content" style="max-width:900px; margin:0 auto; padding:0 2rem 4rem;">
+  <p class="atelier-intro">
+    The studio as the primary space of thought — where images begin before they become paintings.
+  </p>
+
+  <div class="atelier-grid">
+    <div class="atelier-item" data-title="Artist's Studio, 2023">
+      <img src="images/artists-studio-2023.jpg" alt="Artist's Studio, 2023" loading="lazy">
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox-overlay" onclick="if(event.target===this)closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">×</button>
+  <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+  <div class="lb-content">
+    <img id="lb-img" src="" alt="">
+    <ul id="lb-meta" class="lb-meta"></ul>
+    <span id="lb-counter" class="lb-counter"></span>
+  </div>
+  <button class="lb-next" onclick="lbNav(1)">›</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

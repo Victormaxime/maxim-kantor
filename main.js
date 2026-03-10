@@ -231,3 +231,60 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initLightboxItems();
 });
+
+// ── Magi Details Lightbox ─────────────────────────────────────────────────
+function initMagiDetails() {
+  const thumbs = document.querySelectorAll('.magi-detail-thumb');
+  if (!thumbs.length) return;
+
+  const items = Array.from(thumbs);
+  items.forEach((thumb, i) => {
+    thumb.onclick = () => {
+      const src = thumb.dataset.src;
+      const title = thumb.dataset.title || '';
+      openSimpleLightbox(src, title);
+    };
+  });
+}
+
+function openSimpleLightbox(src, title) {
+  const overlay = document.getElementById('lightbox');
+  if (!overlay) return;
+  // Temporarily override lightbox to show single image
+  const lbImg = document.getElementById('lb-img');
+  const lbMeta = document.getElementById('lb-meta');
+  const lbCounter = document.getElementById('lb-counter');
+  if (lbImg) lbImg.src = src;
+  if (lbMeta) lbMeta.innerHTML = `<li>${title}</li>`;
+  if (lbCounter) lbCounter.textContent = '';
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Hide nav arrows for single image
+  const prevBtn = overlay.querySelector('[onclick*="lbNav(-1)"], .lb-prev');
+  const nextBtn = overlay.querySelector('[onclick*="lbNav(1)"], .lb-next');
+  if (prevBtn) prevBtn.style.visibility = 'hidden';
+  if (nextBtn) nextBtn.style.visibility = 'hidden';
+  overlay.addEventListener('click', function restoreNav(e) {
+    if (e.target === overlay) {
+      if (prevBtn) prevBtn.style.visibility = '';
+      if (nextBtn) nextBtn.style.visibility = '';
+      overlay.removeEventListener('click', restoreNav);
+    }
+  }, { once: true });
+}
+
+// ── Atelier Lightbox ──────────────────────────────────────────────────────
+function initAtelierItems() {
+  const items = document.querySelectorAll('.atelier-item');
+  items.forEach(item => {
+    item.onclick = () => {
+      const img = item.querySelector('img');
+      if (img) openSimpleLightbox(img.src, item.dataset.title || '');
+    };
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initMagiDetails();
+  initAtelierItems();
+});

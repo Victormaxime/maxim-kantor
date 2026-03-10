@@ -777,3 +777,84 @@ footer a:hover { color: var(--fg); }
   .paintings-grid .gallery-img-wrap img { max-height: 75vw; }
   .hero-enter-btn { font-size: 0.6rem; padding: 10px 28px; letter-spacing: 0.22em; }
 }
+
+/* ── Three Magi Details ─────────────────────────────────── */
+.magi-details-section {
+  max-width: 1200px;
+  margin: 3rem auto 2rem;
+  padding: 0 2rem;
+}
+.magi-details-label {
+  font-family: var(--font-serif);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(245,244,240,0.15);
+}
+.magi-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.magi-detail-thumb {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.magi-detail-thumb img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.85;
+}
+.magi-detail-thumb:hover img {
+  transform: scale(1.03);
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .magi-details-grid { grid-template-columns: 1fr; }
+  .magi-details-section { padding: 0 1rem; }
+}
+
+/* ── Atelier Page ───────────────────────────────────────── */
+.atelier-intro {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  color: var(--fg-dim);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+.atelier-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+.atelier-item {
+  cursor: pointer;
+  overflow: hidden;
+}
+.atelier-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.85;
+}
+.atelier-item:hover img {
+  transform: scale(1.02);
+  opacity: 1;
+}
+@media (max-width: 600px) {
+  .atelier-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+}
