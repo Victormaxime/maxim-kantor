@@ -581,3 +581,181 @@ footer a:hover { color: var(--fg); }
   color: rgba(245,244,240,0.38);
   font-variant: small-caps;
 }
+
+/* ─── HERO ENTER BUTTON ────────────────────────────────────── */
+.hero-enter-btn {
+  display: inline-block; margin-top: 32px;
+  font-family: var(--sans); font-size: 0.68rem; font-weight: 400;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(245,244,240,0.75); border: 1px solid rgba(245,244,240,0.3);
+  padding: 12px 36px; transition: all 0.3s ease;
+  position: relative; z-index: 1;
+}
+.hero-enter-btn:hover {
+  color: var(--fg); border-color: rgba(245,244,240,0.7);
+  background: rgba(245,244,240,0.07);
+}
+
+/* ─── EXPLORE GRID ─────────────────────────────────────────── */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: #0a0a0a;
+  min-height: calc(100vh - 73px);
+}
+.explore-cell {
+  position: relative; overflow: hidden;
+  aspect-ratio: 4/3;
+  display: block; cursor: pointer;
+  background: #111;
+}
+.explore-cell img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  transition: opacity 0.5s ease, transform 0.6s ease, filter 0.4s ease;
+  filter: brightness(0.55); transform: scale(1);
+}
+.explore-cell img.loaded { opacity: 1; }
+.explore-cell:hover img {
+  filter: brightness(0.35); transform: scale(1.04);
+}
+.explore-label {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+  font-weight: 300; letter-spacing: 0.12em;
+  color: rgba(245,244,240,0.9); text-align: center;
+  padding: 20px; line-height: 1.3;
+  transition: color 0.3s ease;
+  pointer-events: none;
+}
+.explore-cell:hover .explore-label { color: var(--fg); }
+
+@media (max-width: 768px) {
+  .explore-grid { grid-template-columns: repeat(2, 1fr); }
+  .explore-cell { aspect-ratio: 3/2; }
+}
+@media (max-width: 480px) {
+  .explore-grid { grid-template-columns: 1fr; }
+  .explore-cell { aspect-ratio: 16/9; }
+  .explore-label { font-size: 1rem; }
+}
+
+/* ─── PAINTINGS — 2-COL LARGE GRID ────────────────────────── */
+.paintings-grid {
+  columns: 2 480px !important;
+}
+.paintings-grid .gallery-img-wrap img {
+  max-height: 780px !important;
+}
+.paintings-grid .gallery-caption-year {
+  display: block; font-size: 0.62rem; color: var(--fg-muted); margin-top: 2px;
+}
+
+/* ─── COMING SOON PANEL ────────────────────────────────────── */
+.coming-soon-panel {
+  padding: 80px 56px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+}
+.coming-soon-panel p {
+  font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--fg-dim);
+}
+.coming-soon-panel span {
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ─── ETCHINGS LIST ────────────────────────────────────────── */
+.etchings-list {
+  padding: 40px 56px 64px; display: flex; flex-direction: column; gap: 0;
+}
+.etching-entry {
+  padding: 40px 0; border-bottom: 1px solid rgba(245,244,240,0.06);
+}
+.etching-entry:last-child { border-bottom: none; }
+.etching-meta h2 {
+  font-family: var(--serif); font-size: 1.8rem; font-weight: 300;
+  margin-bottom: 6px;
+}
+.etching-date {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg-muted); margin-bottom: 16px;
+}
+.etching-desc {
+  font-size: 0.88rem; color: var(--fg-dim); line-height: 1.7;
+  max-width: 700px; margin-bottom: 12px;
+}
+.etching-note {
+  font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(245,244,240,0.25);
+}
+
+/* ─── ARTIST BOOKS SERIES HEADER ──────────────────────────── */
+.book-series-header {
+  padding: 48px 56px 0; border-top: 1px solid rgba(245,244,240,0.07);
+}
+.book-series-header:first-of-type { border-top: none; padding-top: 24px; }
+.book-series-header h2 {
+  font-family: var(--serif); font-size: 1.6rem; font-weight: 300;
+  margin-bottom: 6px;
+}
+.book-series-header p {
+  font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* ─── GALLERY INQUIRE NOTE ─────────────────────────────────── */
+.gallery-inquire-note {
+  padding: 20px 56px 48px;
+  font-size: 0.78rem; color: var(--fg-muted);
+  border-top: 1px solid rgba(245,244,240,0.06);
+  font-style: italic;
+}
+.gallery-inquire-note a { color: var(--fg-dim); border-bottom: 1px solid rgba(245,244,240,0.2); }
+.gallery-inquire-note a:hover { color: var(--fg); }
+
+/* ─── EXHIBITIONS LIST ─────────────────────────────────────── */
+.exhibitions-list { max-width: 960px; }
+.exhibitions-list .cv-year { font-family: var(--serif); font-size: 0.95rem; color: var(--fg-dim); min-width: 80px; }
+
+/* ─── WRITINGS ─────────────────────────────────────────────── */
+.writings-wrap { max-width: 860px; }
+.writings-section { margin-bottom: 64px; }
+.writings-section-title {
+  font-family: var(--serif); font-size: 1.6rem; font-weight: 300;
+  margin-bottom: 36px; padding-bottom: 16px;
+  border-bottom: 1px solid rgba(245,244,240,0.1);
+}
+.writings-subsection { margin-bottom: 40px; }
+.writings-sub-title {
+  font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--fg-muted); margin-bottom: 20px;
+}
+.writings-list { list-style: none; }
+.writings-list li {
+  display: flex; gap: 28px; padding: 14px 0;
+  border-bottom: 1px solid rgba(245,244,240,0.04);
+  align-items: flex-start;
+}
+.writings-year {
+  font-family: var(--serif); font-size: 0.95rem; color: var(--fg-dim);
+  min-width: 52px; font-weight: 300; padding-top: 2px; flex-shrink: 0;
+}
+.writings-entry em { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; font-style: italic; }
+.writings-entry p { font-size: 0.82rem; color: var(--fg-dim); margin-top: 5px; line-height: 1.6; }
+.writings-entry em + p { margin-top: 6px; }
+.writings-placeholder {
+  font-size: 0.88rem; color: var(--fg-muted); padding: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .paintings-grid { columns: 1 !important; }
+  .etchings-list { padding: 32px 20px 48px; }
+  .book-series-header { padding: 36px 20px 0; }
+  .gallery-inquire-note { padding: 20px 20px 36px; }
+  .coming-soon-panel { padding: 48px 20px; }
+  .writings-list li { flex-direction: column; gap: 4px; }
+  .writings-year { min-width: auto; }
+}
