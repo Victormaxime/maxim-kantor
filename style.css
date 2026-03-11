@@ -135,6 +135,17 @@ nav {
 }
 
 /* ─── WORKS FILTERS ───────────────────────────────────────── */
+.works-filters-wrap {
+  position: relative;
+}
+.works-filters-wrap::after {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, transparent, var(--bg));
+  pointer-events: none;
+}
+
 .works-filters {
   display: flex; gap: 0; padding: 0 56px;
   border-bottom: 1px solid rgba(245,244,240,0.07);
@@ -176,7 +187,7 @@ nav {
   width: 100%; height: auto; display: block;
   max-height: 580px; object-fit: cover; object-position: center top;
   transition: opacity 0.5s ease, filter 0.4s ease;
-  filter: brightness(0.94);
+  filter: brightness(1);
 }
 .gallery-img-wrap img.loaded { opacity: 1; }
 .gallery-item:hover .gallery-img-wrap img { filter: brightness(0.65); }
@@ -547,7 +558,7 @@ footer a:hover { color: var(--fg); }
 @media (max-width: 480px) {
   .hero-title { font-size: clamp(2.4rem, 14vw, 4rem); }
   .gallery-grid { columns: 1; padding: 8px 12px; }
-  .gallery-img-wrap img { max-height: 75vw; }
+  .gallery-img-wrap img { max-height: none; }
   .page-header h1 { font-size: clamp(1.9rem, 10vw, 3rem); }
   .filter-btn { font-size: 0.62rem; padding: 14px 16px 14px 0; margin-right: 12px; }
   .bio-text { font-size: 0.95rem; }
@@ -648,10 +659,23 @@ footer a:hover { color: var(--fg); }
   columns: 2 480px !important;
 }
 .paintings-grid .gallery-img-wrap img {
-  max-height: 780px;
+  max-height: none;
+  object-fit: contain;
+  height: auto;
+  background: #0a0a0a;
 }
 .paintings-grid .gallery-caption-year {
   display: block; font-size: 0.62rem; color: var(--fg-muted); margin-top: 2px;
+}
+
+/* ─── SERIES TEXT ONLY ─────────────────────────────────────── */
+.series-text-only {
+  padding: 32px 56px;
+  border-bottom: 1px solid rgba(245,244,240,0.04);
+}
+.series-note {
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--fg-muted);
 }
 
 /* ─── COMING SOON PANEL ────────────────────────────────────── */
@@ -753,7 +777,7 @@ footer a:hover { color: var(--fg); }
 @media (max-width: 768px) {
   /* Paintings */
   .paintings-grid { columns: 1 !important; }
-  .paintings-grid .gallery-img-wrap img { max-height: 480px; }
+  .paintings-grid .gallery-img-wrap img { max-height: none; object-fit: contain; }
 
   /* Graphic works */
   .etchings-list { padding: 32px 20px 48px; }
@@ -774,7 +798,7 @@ footer a:hover { color: var(--fg); }
 }
 
 @media (max-width: 480px) {
-  .paintings-grid .gallery-img-wrap img { max-height: 75vw; }
+  .paintings-grid .gallery-img-wrap img { max-height: none; object-fit: contain; }
   .hero-enter-btn { font-size: 0.6rem; padding: 10px 28px; letter-spacing: 0.22em; }
 }
 
