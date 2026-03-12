@@ -73,7 +73,7 @@ nav {
 /* ─── HOME HERO ───────────────────────────────────────────── */
 .hero {
   position: relative; height: calc(100vh - 73px); overflow: hidden;
-  display: flex; align-items: flex-end;
+  display: flex; align-items: flex-end; background: #111;
 }
 /* Hero image */
 .hero img {
