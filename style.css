@@ -185,7 +185,7 @@ nav {
 }
 .gallery-img-wrap img {
   width: 100%; height: auto; display: block;
-  max-height: 580px; object-fit: cover; object-position: center top;
+  max-height: none; object-fit: contain; object-position: center;
   transition: opacity 0.5s ease, filter 0.4s ease;
   filter: brightness(1);
 }
@@ -515,7 +515,7 @@ footer a:hover { color: var(--fg); }
   /* Gallery */
   .gallery-grid { columns: 2; column-gap: 8px; padding: 10px 12px 32px; }
   .gallery-item { margin-bottom: 8px; }
-  .gallery-img-wrap img { max-height: 320px; }
+  .gallery-img-wrap img { max-height: none; }
   .gallery-caption-title { font-size: 0.68rem; }
 
   /* Bio */
