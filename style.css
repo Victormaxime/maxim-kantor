@@ -895,3 +895,15 @@ body.home nav { display: none; }
 
 /* ── Screen-reader only ─────────────────────────────────── */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* ─── BACK TO EXPLORE ─────────────────────────────────────── */
+.back-to-explore {
+  display: inline-flex; align-items: center; gap: 6px;
+  position: fixed; bottom: 1.8rem; left: 1.8rem; z-index: 90;
+  font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  text-decoration: none; background: rgba(20,20,20,0.7);
+  padding: 0.5rem 0.8rem; border-radius: 3px;
+  backdrop-filter: blur(4px); transition: color 0.2s, background 0.2s;
+}
+.back-to-explore:hover { color: #fff; background: rgba(20,20,20,0.9); }
