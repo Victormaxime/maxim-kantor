@@ -54,11 +54,11 @@ nav {
   letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg);
 }
 
-.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links { display: flex; gap: 28px; list-style: none; flex-wrap: nowrap; align-items: center; }
 .nav-links a {
-  font-family: var(--sans); font-size: 0.7rem; font-weight: 400;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-muted);
-  transition: color 0.25s;
+  font-family: var(--sans); font-size: 0.62rem; font-weight: 400;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted);
+  transition: color 0.25s; white-space: nowrap;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--fg); }
 

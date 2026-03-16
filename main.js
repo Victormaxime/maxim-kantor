@@ -99,8 +99,13 @@ function initTabs() {
   const hash = window.location.hash.replace('#', '');
   if (hash) {
     const btn = document.querySelector(`.filter-btn[data-filter="${hash}"]`);
-    if (btn && !btn.classList.contains('empty')) btn.click();
+    if (btn && !btn.classList.contains('empty')) { btn.click(); return; }
   }
+
+  // Auto-show the active tab (or first non-empty tab) on page load
+  const activeBtn = document.querySelector('.filter-btn.active:not(.empty)') ||
+                    document.querySelector('.filter-btn:not(.empty)');
+  if (activeBtn) activeBtn.click();
 }
 
 // ── Gallery filters (works.html legacy) ───────────────────────────────────
