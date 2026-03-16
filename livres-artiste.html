@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livres d'Artiste — Maxim Kantor</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .livres-hero {
+      padding: 8rem 2rem 4rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .livres-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .livres-hero p {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--fg-dim);
+      line-height: 1.8;
+    }
+    .livre-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--fg-muted);
+    }
+    .livre-header {
+      margin-bottom: 3rem;
+    }
+    .livre-subtitle {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fg-dim);
+      margin-bottom: 0.8rem;
+    }
+    .livre-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+    .livre-desc {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--fg-dim);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+    .livre-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .livre-img-wrap {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--bg-2);
+    }
+    .livre-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .livre-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+    .livre-caption {
+      margin-top: 0.5rem;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--fg-dim);
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .livre-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="main-nav">
+    <a href="index.html" class="nav-logo">Maxim Kantor</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="paintings.html">Paintings</a></li>
+      <li><a href="graphic-works.html">Prints and Drawings</a></li>
+      <li><a href="sculpture.html">Sculpture</a></li>
+      <li><a href="installations.html">Site Specific Artworks</a></li>
+      <li><a href="atelier.html">Atelier</a></li>
+      <li><a href="livres-artiste.html" class="active">Livres d'Artiste</a></li>
+      <li><a href="catalogues.html">Catalogues</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="exhibitions.html">Exhibitions</a></li>
+      <li><a href="writings.html">Writings</a></li>
+      <li><a href="biography.html">Biography</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="livres-hero">
+      <h1>Livres d'Artiste</h1>
+      <p>Artist books conceived and illustrated by Maxim Kantor — original prints, etchings and drawings created in dialogue with literary works.</p>
+    </div>
+
+    <!-- KLEIST — The Battle of Hermann -->
+    <section class="livre-section">
+      <div class="livre-header">
+        <div class="livre-subtitle">Kleist · 2013</div>
+        <h2 class="livre-title">Die Hermannsschlacht — The Battle of Hermann</h2>
+        <p class="livre-desc">A livre d'artiste illustrating Heinrich von Kleist's drama <em>Die Hermannsschlacht</em> (1808). Original etchings and lithographs, hand-bound edition.</p>
+      </div>
+      <div class="livre-grid">
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-0.jpg" alt="Kleist — Battle, plate 1" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-1.jpg" alt="Kleist — Battle, plate 2" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-2.jpg" alt="Kleist — Battle, plate 3" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-3.jpg" alt="Kleist — Battle, plate 4" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-4.jpg" alt="Kleist — Battle, plate 5" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-5.jpg" alt="Kleist — Battle, plate 6" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-6.jpg" alt="Kleist — Battle, plate 7" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-7.jpg" alt="Kleist — Battle, plate 8" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-8.jpg" alt="Kleist — Battle, plate 9" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-9.jpg" alt="Kleist — Battle, plate 10" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-10.jpg" alt="Kleist — Battle, plate 11" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-11.jpg" alt="Kleist — Battle, plate 12" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-12.jpg" alt="Kleist — Battle, plate 13" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-13.jpg" alt="Kleist — Battle, plate 14" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2013-kleist-bitva-14.jpg" alt="Kleist — Battle, plate 15" loading="lazy"></div></div>
+      </div>
+    </section>
+
+    <!-- GOETHE -->
+    <section class="livre-section">
+      <div class="livre-header">
+        <div class="livre-subtitle">Goethe · 2018</div>
+        <h2 class="livre-title">Goethe — Livre d'Artiste</h2>
+        <p class="livre-desc">Original prints and drawings created in response to Goethe's writings. Hand-printed editions.</p>
+      </div>
+      <div class="livre-grid">
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12789.jpg" alt="Goethe, plate 1" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12790.jpg" alt="Goethe, plate 2" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12791.jpg" alt="Goethe, plate 3" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12792.jpg" alt="Goethe, plate 4" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12793.jpg" alt="Goethe, plate 5" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12794.jpg" alt="Goethe, plate 6" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12795.jpg" alt="Goethe, plate 7" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12796.jpg" alt="Goethe, plate 8" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12797.jpg" alt="Goethe, plate 9" loading="lazy"></div></div>
+        <div><div class="livre-img-wrap"><img src="images/livres-2018-goethe-12798.jpg" alt="Goethe, plate 10" loading="lazy"></div></div>
+      </div>
+    </section>
+
+    <!-- ROBIN HOOD — placeholder pending Cristina -->
+    <section class="livre-section">
+      <div class="livre-header">
+        <div class="livre-subtitle">Robin Hood · 2014</div>
+        <h2 class="livre-title">Robin Hood — Lithographies</h2>
+        <p class="livre-desc">A suite of original lithographs. Images to be added shortly.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="text-align:center;padding:3rem 2rem;font-family:var(--sans);font-size:0.72rem;color:var(--fg-dim);border-top:1px solid var(--fg-muted);">
+    © 2026 Maxim Kantor. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
