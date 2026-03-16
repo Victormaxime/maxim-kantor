@@ -298,58 +298,43 @@ document.addEventListener('DOMContentLoaded', () => {
 (function() {
   function initDetailPanels() {
     document.querySelectorAll('.gallery-item[data-details]').forEach(function(item) {
-      item.classList.add('gallery-item--has-details');
-      // Insert detail panel after the item if not already present
-      if (!item.querySelector('.detail-panel')) {
-        const detailsAttr = item.getAttribute('data-details');
-        const images = detailsAttr.split(',').filter(Boolean);
-        const panel = document.createElement('div');
-        panel.className = 'detail-panel';
-        const grid = document.createElement('div');
-        grid.className = 'detail-panel-grid';
-        images.forEach(function(img) {
-          const imgEl = document.createElement('img');
-          imgEl.src = 'images/' + img.trim();
-          imgEl.alt = item.getAttribute('data-title') + ' — detail';
-          imgEl.loading = 'eager';
-          imgEl.style.width = '100%';
-          imgEl.style.display = 'block';
-          grid.appendChild(imgEl);
+      var panel = item.querySelector('.detail-panel');
+      if (!panel) return;
+      var wrap = item.querySelector('.gallery-img-wrap');
+      if (!wrap || wrap._detailBound) return;
+      wrap._detailBound = true;
+      // Add badge
+      var badge = document.createElement('span');
+      badge.className = 'detail-badge';
+      badge.textContent = 'Details ↓';
+      badge.style.cssText = 'position:absolute;bottom:8px;right:10px;font-family:var(--sans);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,244,240,0.7);background:rgba(0,0,0,0.6);padding:3px 7px;border-radius:2px;pointer-events:none;';
+      wrap.style.position = 'relative';
+      wrap.style.cursor = 'pointer';
+      wrap.appendChild(badge);
+      wrap.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = panel.style.display === 'block';
+        // Close all
+        document.querySelectorAll('.gallery-item[data-details] .detail-panel').forEach(function(p) {
+          p.style.display = 'none';
         });
-        panel.appendChild(grid);
-        item.appendChild(panel);
-      }
-      // Click handler on image wrap
-      const wrap = item.querySelector('.gallery-img-wrap');
-      if (wrap && !wrap._detailBound) {
-        wrap._detailBound = true;
-        wrap.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const isOpen = item.classList.contains('open');
-          // Close all others
-          document.querySelectorAll('.gallery-item--has-details.open').forEach(function(el) {
-            if (el !== item) el.classList.remove('open');
-          });
-          item.classList.toggle('open', !isOpen);
-          if (!isOpen) {
-            setTimeout(function() {
-              item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }, 50);
-          }
+        document.querySelectorAll('.detail-badge').forEach(function(b) {
+          b.textContent = 'Details ↓';
         });
-      }
+        if (!isOpen) {
+          panel.style.display = 'block';
+          badge.textContent = 'Details ↑';
+          setTimeout(function() { item.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+        }
+      });
     });
   }
-  // Run on DOM ready and after tab switches
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initDetailPanels);
   } else {
     initDetailPanels();
   }
-  // Re-init when tab changes (filter buttons)
   document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('filter-btn')) {
-      setTimeout(initDetailPanels, 100);
-    }
+    if (e.target.classList.contains('filter-btn')) { setTimeout(initDetailPanels, 200); }
   });
 })();
