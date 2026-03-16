@@ -82,7 +82,16 @@
       text-align: center;
     }
     @media (max-width: 768px) {
+      .livres-hero { padding: 5rem 1.25rem 2rem; }
+      .livres-hero > div { max-width: 100% !important; }
+      .livres-hero img { max-width: 260px; margin: 0 auto; }
+      .livre-section { padding: 2.5rem 1.25rem; }
       .livre-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .livre-title { font-size: 1.3rem; }
+    }
+    @media (max-width: 480px) {
+      .livres-hero { padding: 4rem 1rem 1.5rem; }
+      .livre-grid { grid-template-columns: 1fr; gap: 0.5rem; }
     }
   </style>
 </head>
