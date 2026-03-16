@@ -12,57 +12,83 @@
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     All Works
   </a>
-  <nav>
+<nav>
   <a href="index.html" class="nav-brand">Maxim Kantor</a>
   <button class="nav-toggle" aria-label="Menu" onclick="toggleNav()">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links">
-    <li><a href="paintings.html">Paintings</a></li>
-    <li><a href="graphic-works.html">Prints and Drawings</a></li>
-    <li><a href="sculpture.html">Sculpture</a></li>
-    <li><a href="installations.html">Site Specific Artworks</a></li>
-    <li><a href="atelier.html">Atelier</a></li>
-    <li><a href="livres-artiste.html">Livres d'Artiste</a></li>
-    <li><a href="catalogues.html">Catalogues</a></li>
-    <li><a href="books.html">Books</a></li>
-    <li><a href="exhibitions.html">Exhibitions</a></li>
-    <li><a href="museums.html" class="active">Museums &amp; Collections</a></li>
-    <li><a href="writings.html">Writings</a></li>
-    <li><a href="biography.html">Biography</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+      <li><a href="paintings.html">Paintings</a></li>
+      <li><a href="graphic-works.html">Prints and Drawings</a></li>
+      <li><a href="sculpture.html">Sculpture</a></li>
+      <li><a href="installations.html" >Site Specific Artworks</a></li>
+      <li><a href="atelier.html">Atelier</a></li>
+      <li><a href="livres-artiste.html">Livres d'Artiste</a></li>
+      <li><a href="catalogues.html">Catalogues</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="exhibitions.html">Exhibitions</a></li>
+      <li><a href="museums.html" class="active">Museums &amp; Collections</a></li>
+      <li><a href="writings.html">Writings</a></li>
+      <li><a href="biography.html">Biography</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
 </nav>
-  <main class="section-main">
-    <div class="section-header">
-      <h1>Museums &amp; Collections</h1>
-      <p class="section-intro">Works by Maxim Kantor held in museum and private collections in Russia, Europe, and beyond.</p>
+
+<div class="page-header">
+  <h1>Museums &amp; Collections</h1>
+  <p class="subtitle">Permanent installations and collections worldwide</p>
+</div>
+
+<div class="installations-grid">
+
+  <div class="installation-item">
+    <div class="installation-meta">
+      <div class="installation-venue">Pontifical Academy of Sciences</div>
+      <h2 class="installation-title">Vatican</h2>
+      <div class="installation-city">Rome, Italy · Permanent</div>
+      <p class="installation-desc">Two monumental works permanently installed at the Pontifical Academy of Sciences within the Vatican.</p>
+      <ul class="installation-works-list">
+        <li><em>Saint Thomas Aquinas</em></li>
+        <li><em>Saint Francis and Blessed Augustine</em></li>
+      </ul>
     </div>
-    <div class="livre-section">
-      <div class="livre-header">
-        <div class="livre-subtitle">Vatican · Permanent</div>
-        <h2 class="livre-title">Pontifical Academy of Sciences</h2>
-        <p class="livre-desc">Two monumental works permanently installed at the Pontifical Academy of Sciences within the Vatican: <em>Saint Thomas Aquinas</em> and <em>Saint Francis and Blessed Augustine</em>.</p>
-      </div>
+    <div class="installation-photos"></div>
+  </div>
+
+  <div class="installation-item">
+    <div class="installation-meta">
+      <div class="installation-venue">Genscher Saal, Bundestag</div>
+      <h2 class="installation-title">Berlin</h2>
+      <div class="installation-city">Germany · Permanent</div>
+      <p class="installation-desc">Two monumental paintings permanently installed in the historic Genscher Saal of the Bundestag.</p>
     </div>
-    <div class="livre-section">
-      <div class="livre-header">
-        <div class="livre-subtitle">Germany · Permanent</div>
-        <h2 class="livre-title">Genscher Saal, Bundestag</h2>
-        <p class="livre-desc">Two monumental paintings permanently installed in the historic Genscher Saal of the Bundestag.</p>
-      </div>
-      <div class="livre-grid" style="max-width:800px">
-        <div><div class="livre-img-wrap"><img src="images/2018-last-judgement-cover.jpg" alt="Last Judgement, 2018" loading="lazy"></div></div>
-      </div>
+    <div class="installation-photos">
+      <img src="images/2018-last-judgement-cover.jpg" alt="Last Judgement, 2018" loading="lazy">
     </div>
-    <div class="livre-section">
-      <div class="livre-header">
-        <div class="livre-subtitle">Ongoing</div>
-        <h2 class="livre-title">Private &amp; Institutional Collections</h2>
-        <p class="livre-desc">Works by Maxim Kantor are held in major private collections in Russia, France, Germany, Italy, the United Kingdom, and the United States, as well as institutional collections including the State Russian Museum (St. Petersburg) and the State Tretyakov Gallery (Moscow).</p>
-      </div>
+  </div>
+
+  <div class="installation-item">
+    <div class="installation-meta">
+      <div class="installation-venue">State Russian Museum &amp; State Tretyakov Gallery</div>
+      <h2 class="installation-title">Russia</h2>
+      <div class="installation-city">St. Petersburg &amp; Moscow</div>
+      <p class="installation-desc">Works held in the permanent collections of the State Russian Museum (St. Petersburg) and the State Tretyakov Gallery (Moscow).</p>
     </div>
-  </main>
-  <script src="main.js"></script>
+    <div class="installation-photos"></div>
+  </div>
+
+  <div class="installation-item">
+    <div class="installation-meta">
+      <div class="installation-venue">Private &amp; Institutional Collections</div>
+      <h2 class="installation-title">Europe &amp; Beyond</h2>
+      <div class="installation-city">France, Germany, Italy, United Kingdom, United States</div>
+      <p class="installation-desc">Works by Maxim Kantor are held in major private and institutional collections across Europe and North America.</p>
+    </div>
+    <div class="installation-photos"></div>
+  </div>
+
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
