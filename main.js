@@ -293,3 +293,61 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagiDetails();
   initAtelierItems();
 });
+
+// ─── PAINTING DETAIL PANEL ──────────────────────────────────
+(function() {
+  function initDetailPanels() {
+    document.querySelectorAll('.gallery-item[data-details]').forEach(function(item) {
+      item.classList.add('gallery-item--has-details');
+      // Insert detail panel after the item if not already present
+      if (!item.querySelector('.detail-panel')) {
+        const detailsAttr = item.getAttribute('data-details');
+        const images = detailsAttr.split(',').filter(Boolean);
+        const panel = document.createElement('div');
+        panel.className = 'detail-panel';
+        const grid = document.createElement('div');
+        grid.className = 'detail-panel-grid';
+        images.forEach(function(img) {
+          const imgEl = document.createElement('img');
+          imgEl.src = 'images/' + img.trim();
+          imgEl.alt = item.getAttribute('data-title') + ' — detail';
+          imgEl.loading = 'lazy';
+          grid.appendChild(imgEl);
+        });
+        panel.appendChild(grid);
+        item.appendChild(panel);
+      }
+      // Click handler on image wrap
+      const wrap = item.querySelector('.gallery-img-wrap');
+      if (wrap && !wrap._detailBound) {
+        wrap._detailBound = true;
+        wrap.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isOpen = item.classList.contains('open');
+          // Close all others
+          document.querySelectorAll('.gallery-item--has-details.open').forEach(function(el) {
+            if (el !== item) el.classList.remove('open');
+          });
+          item.classList.toggle('open', !isOpen);
+          if (!isOpen) {
+            setTimeout(function() {
+              item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 50);
+          }
+        });
+      }
+    });
+  }
+  // Run on DOM ready and after tab switches
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDetailPanels);
+  } else {
+    initDetailPanels();
+  }
+  // Re-init when tab changes (filter buttons)
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('filter-btn')) {
+      setTimeout(initDetailPanels, 100);
+    }
+  });
+})();

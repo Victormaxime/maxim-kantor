@@ -909,3 +909,35 @@ body.home nav { display: none; }
   backdrop-filter: blur(4px); transition: color 0.2s, background 0.2s;
 }
 .back-to-explore:hover { color: #fff; background: rgba(20,20,20,0.9); }
+
+/* ─── PAINTING DETAIL PANEL (click to expand) ─────────────── */
+.gallery-item--has-details .gallery-img-wrap::after {
+  content: "Details ↓";
+  position: absolute; bottom: 8px; right: 10px;
+  font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(245,244,240,0.6);
+  background: rgba(0,0,0,0.55); padding: 3px 7px; border-radius: 2px;
+  pointer-events: none;
+}
+.gallery-item--has-details .gallery-img-wrap {
+  position: relative; cursor: pointer;
+}
+.gallery-item--has-details.open .gallery-img-wrap::after {
+  content: "Details ↑";
+}
+.detail-panel {
+  display: none;
+  padding: 1rem 0 2rem;
+  animation: fadeIn 0.3s ease;
+}
+.gallery-item--has-details.open .detail-panel {
+  display: block;
+}
+.detail-panel-grid {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.detail-panel-grid img {
+  width: calc(50% - 4px); border-radius: 2px; object-fit: cover;
+  cursor: pointer;
+}
+@keyframes fadeIn { from { opacity:0; transform: translateY(-4px); } to { opacity:1; transform: none; } }
