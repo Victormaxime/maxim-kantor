@@ -311,7 +311,9 @@ document.addEventListener('DOMContentLoaded', () => {
           const imgEl = document.createElement('img');
           imgEl.src = 'images/' + img.trim();
           imgEl.alt = item.getAttribute('data-title') + ' — detail';
-          imgEl.loading = 'lazy';
+          imgEl.loading = 'eager';
+          imgEl.style.width = '100%';
+          imgEl.style.display = 'block';
           grid.appendChild(imgEl);
         });
         panel.appendChild(grid);
