@@ -6,6 +6,105 @@
   <title>Museums &amp; Collections — Maxim Kantor</title>
   <meta name="description" content="Works by Maxim Kantor in museum and private collections worldwide.">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .installations-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+    .installation-item {
+      border-top: 1px solid var(--fg-muted);
+      padding: 4rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .installation-item:last-child {
+      border-bottom: 1px solid var(--fg-muted);
+    }
+    .installation-meta {
+      position: sticky;
+      top: 6rem;
+    }
+    .installation-venue {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fg-dim);
+      margin-bottom: 1rem;
+    }
+    .installation-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      color: var(--fg);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .installation-city {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--fg-dim);
+      margin-bottom: 2rem;
+    }
+    .installation-desc {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--fg-dim);
+    }
+    .installation-works-list {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: rgba(245,244,240,0.5);
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(245,244,240,0.1);
+    }
+    .installation-works-list li {
+      list-style: none;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .installation-works-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: rgba(245,244,240,0.25);
+    }
+    .installation-photos {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .photo-placeholder {
+      background: rgba(245,244,240,0.04);
+      border: 1px solid rgba(245,244,240,0.08);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo-placeholder-text {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,244,240,0.2);
+    }
+    @media (max-width: 768px) {
+      .installation-item {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 0;
+      }
+      .installation-meta { position: static; }
+    }
+  </style>
 </head>
 <body>
   <a href="explore.html" class="back-to-explore" aria-label="All works">
