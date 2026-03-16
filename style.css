@@ -656,7 +656,9 @@ footer a:hover { color: var(--fg); }
 
 /* ─── PAINTINGS — 2-COL LARGE GRID ────────────────────────── */
 .paintings-grid {
-  columns: 2 480px !important;
+  columns: 1 !important;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .paintings-grid .gallery-img-wrap img {
   max-height: none;
@@ -776,7 +778,7 @@ footer a:hover { color: var(--fg); }
 
 @media (max-width: 768px) {
   /* Paintings */
-  .paintings-grid { columns: 1 !important; }
+  .paintings-grid { columns: 1 !important; max-width: 900px; margin: 0 auto; }
   .paintings-grid .gallery-img-wrap img { max-height: none; object-fit: contain; }
 
   /* Graphic works */
