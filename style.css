@@ -1075,3 +1075,17 @@ body.home nav { display: none; }
 .lightbox-prev { left: 1rem; }
 .lightbox-next { right: 1rem; }
 .lightbox-prev:hover, .lightbox-next:hover { color: var(--fg); }
+
+/* ─── PAGE COVER HERO ─────────────────────────────────────── */
+.page-cover-hero {
+  width: 100%;
+  max-height: 480px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(245,244,240,0.07);
+}
+.page-cover-hero img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  display: block;
+}
