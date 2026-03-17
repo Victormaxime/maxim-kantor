@@ -993,16 +993,16 @@ body.home nav { display: none; }
 .nav-dropdown a:hover { color: var(--fg); }
 .nav-arrow { font-size: 0.55em; margin-left: 0.3em; opacity: 0.6; vertical-align: middle; }
 
-/* Mobile dropdown */
+/* Mobile dropdown — always expanded */
 @media (max-width: 768px) {
   .nav-item-has-dropdown .nav-dropdown {
     position: static;
     border: none;
     padding: 0 0 0 1rem;
     background: transparent;
-    display: none;
+    display: block;
   }
-  .nav-item-has-dropdown.open .nav-dropdown { display: block; }
+  .nav-arrow { display: none; }
   .nav-dropdown a { font-size: 0.58rem; padding: 0.35rem 0.5rem; }
 }
 
