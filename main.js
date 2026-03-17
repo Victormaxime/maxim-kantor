@@ -338,3 +338,136 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.classList.contains('filter-btn')) { setTimeout(initDetailPanels, 200); }
   });
 })();
+
+/* ─── DROPDOWN NAVIGATION ─────────────────────────────────── */
+(function() {
+  function initDropdowns() {
+    var items = document.querySelectorAll('.nav-item-has-dropdown');
+    items.forEach(function(item) {
+      // Toggle on click (works on both mobile & desktop)
+      var trigger = item.querySelector('.nav-link-dropdown');
+      if (trigger) {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          var isOpen = item.classList.contains('open');
+          // Close all
+          items.forEach(function(i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+        });
+      }
+    });
+    // Close when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.nav-item-has-dropdown')) {
+        items.forEach(function(i) { i.classList.remove('open'); });
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDropdowns);
+  } else {
+    initDropdowns();
+  }
+})();
+
+/* ─── LIGHTBOX ───────────────────────────────────────────── */
+(function() {
+  var overlay, imgEl, titleEl, metaEl, currentItems, currentIdx;
+
+  function buildLightbox() {
+    if (document.getElementById('lightbox-overlay')) return;
+    overlay = document.createElement('div');
+    overlay.id = 'lightbox-overlay';
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML =
+      '<button class="lightbox-close" aria-label="Fermer">&times;</button>' +
+      '<button class="lightbox-prev" aria-label="Précédent">&#8592;</button>' +
+      '<div class="lightbox-inner">' +
+        '<img class="lightbox-img" src="" alt="">' +
+        '<div class="lightbox-caption">' +
+          '<div class="lb-title"></div>' +
+          '<div class="lb-meta"></div>' +
+        '</div>' +
+      '</div>' +
+      '<button class="lightbox-next" aria-label="Suivant">&#8594;</button>';
+    document.body.appendChild(overlay);
+    imgEl = overlay.querySelector('.lightbox-img');
+    titleEl = overlay.querySelector('.lb-title');
+    metaEl = overlay.querySelector('.lb-meta');
+    overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    overlay.querySelector('.lightbox-prev').addEventListener('click', function() { navigate(-1); });
+    overlay.querySelector('.lightbox-next').addEventListener('click', function() { navigate(1); });
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLightbox(); });
+    document.addEventListener('keydown', function(e) {
+      if (!overlay.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  }
+
+  function openLightbox(items, idx) {
+    buildLightbox();
+    currentItems = items;
+    currentIdx = idx;
+    showItem();
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function navigate(dir) {
+    currentIdx = (currentIdx + dir + currentItems.length) % currentItems.length;
+    showItem();
+  }
+
+  function showItem() {
+    var item = currentItems[currentIdx];
+    var imgWrap = item.querySelector('.gallery-img-wrap img') || item.querySelector('img');
+    if (imgWrap) {
+      imgEl.src = imgWrap.src;
+      imgEl.alt = imgWrap.alt || '';
+    }
+    var title = item.getAttribute('data-title') || item.querySelector('.gallery-caption-title, .gallery-caption')?.textContent?.trim() || '';
+    var year = item.getAttribute('data-year') || item.querySelector('.gallery-caption-year')?.textContent?.trim() || '';
+    var technique = item.getAttribute('data-technique') || '';
+    var dimensions = item.getAttribute('data-dimensions') || '';
+    titleEl.textContent = title;
+    var metaParts = [year, technique, dimensions].filter(Boolean);
+    metaEl.textContent = metaParts.join(' · ');
+  }
+
+  function initLightbox() {
+    var grids = document.querySelectorAll('.paintings-grid');
+    grids.forEach(function(grid) {
+      var items = Array.from(grid.querySelectorAll('.gallery-item:not(.detail-panel-row)'));
+      items.forEach(function(item, idx) {
+        var wrap = item.querySelector('.gallery-img-wrap');
+        if (!wrap) return;
+        wrap.style.cursor = 'zoom-in';
+        wrap.addEventListener('click', function(e) {
+          // Don't trigger if detail badge was clicked
+          if (e.target.closest('.detail-badge')) return;
+          // Get currently visible items (filtered)
+          var visibleItems = items.filter(function(i) { return i.style.display !== 'none'; });
+          var visibleIdx = visibleItems.indexOf(item);
+          openLightbox(visibleItems, visibleIdx >= 0 ? visibleIdx : 0);
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLightbox);
+  } else {
+    initLightbox();
+  }
+  // Re-init after filter changes
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('filter-btn')) { setTimeout(initLightbox, 300); }
+  });
+})();
