@@ -1113,3 +1113,18 @@ body.home nav { display: none; }
   background: rgba(245,244,240,0.03);
   border: 1px solid rgba(245,244,240,0.07);
 }
+
+/* ─── PORTRAIT PAINTINGS ─────────────────────────────────── */
+.gallery-item.portrait .gallery-img-wrap img {
+  object-fit: contain;
+  background: #0d0d0d;
+}
+
+/* ─── CAPTION DATE (month year) ──────────────────────────── */
+.gallery-caption-date {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.06em;
+  margin-top: 1px;
+}
