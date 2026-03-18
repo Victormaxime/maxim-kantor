@@ -457,3 +457,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.classList.contains('filter-btn')) { setTimeout(initLightbox, 300); }
   });
 })();
+
+/* ─── GALLERY CAPTION DIMENSIONS ─────────────────────────── */
+(function() {
+  function injectDims() {
+    document.querySelectorAll('.gallery-item').forEach(function(item) {
+      var dims = item.getAttribute('data-dimensions') || item.getAttribute('data-dims') || '';
+      if (!dims) return;
+      var caption = item.querySelector('.gallery-caption');
+      if (!caption) return;
+      // Remove existing dims span if re-rendering
+      var existing = caption.querySelector('.gallery-caption-dims');
+      if (existing) existing.remove();
+      var span = document.createElement('span');
+      span.className = 'gallery-caption-dims';
+      span.textContent = dims;
+      caption.appendChild(span);
+    });
+  }
+  document.addEventListener('DOMContentLoaded', injectDims);
+  // Re-run after tab switches (DOMContentLoaded fires once; tabs may hide/show items)
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.tab-btn, .filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { setTimeout(injectDims, 50); });
+    });
+  });
+})();
