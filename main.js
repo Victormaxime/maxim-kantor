@@ -167,10 +167,12 @@ function renderLightbox() {
   const img = item.querySelector('img');
   const title = item.dataset.title || '';
   const year = item.dataset.year || '';
+  const month = item.dataset.month || '';
   const medium = item.dataset.medium || '';
   const dimensions = item.dataset.dimensions || '';
   const series = item.dataset.series || '';
   const edition = item.dataset.edition || '';
+  const dateDisplay = month ? `${month} ${year}` : year;
 
   // Image
   const lbImg = document.getElementById('lb-img');
@@ -189,7 +191,7 @@ function renderLightbox() {
   const lbMeta = document.getElementById('lb-meta');
   if (lbMeta) {
     const rows = [];
-    if (year) rows.push(`<li>${year}</li>`);
+    if (dateDisplay) rows.push(`<li>${dateDisplay}</li>`);
     if (medium) rows.push(`<li>${medium}</li>`);
     if (dimensions) rows.push(`<li>${dimensions}</li>`);
     if (series) rows.push(`<li>${series}</li>`);
