@@ -1128,3 +1128,10 @@ body.home nav { display: none; }
   letter-spacing: 0.06em;
   margin-top: 1px;
 }
+.gallery-caption-dims {
+  font-size: 0.65rem;
+  color: #aaa;
+  display: block;
+  margin-top: 1px;
+  letter-spacing: 0.02em;
+}
