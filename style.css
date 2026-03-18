@@ -1135,3 +1135,15 @@ body.home nav { display: none; }
   margin-top: 1px;
   letter-spacing: 0.02em;
 }
+
+.atlas-section-title {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin: 3rem 0 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+}
+.atlas-section-title:first-child { border-top: none; margin-top: 0; }
