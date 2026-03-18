@@ -90,8 +90,6 @@ function initTabs() {
         });
         panel.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
       }
-      // Re-init lightbox for visible items
-      initLightboxItems();
     });
   });
 
@@ -135,28 +133,13 @@ function initGalleryFilters() {
         div.style.display = (filter === 'books') ? '' : 'none';
       });
 
-      initLightboxItems();
-    });
+        });
   });
 }
 
 // ── Lightbox ──────────────────────────────────────────────────────────────
 let lbItems = [];
 let lbCurrent = 0;
-
-function initLightboxItems() {
-  // Collect gallery items from currently visible tab panel (or all)
-  const activePanel = document.querySelector('.tab-panel:not([style*="display: none"])') ||
-                      document.querySelector('.tab-panel') ||
-                      document;
-  lbItems = Array.from((activePanel || document).querySelectorAll('.gallery-item'))
-    .filter(el => el.style.display !== 'none');
-
-  lbItems.forEach((item, i) => {
-    item.style.cursor = 'pointer';
-    item.onclick = () => openLightbox(i);
-  });
-}
 
 function openLightbox(idx) {
   lbCurrent = idx;
@@ -234,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryReveal();
   initScrollReveal();
   initTabs();
-  initLightboxItems();
 });
 
 // ── Magi Details Lightbox ─────────────────────────────────────────────────
