@@ -434,10 +434,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     var title = item.getAttribute('data-title') || item.querySelector('.gallery-caption-title, .gallery-caption')?.textContent?.trim() || '';
     var year = item.getAttribute('data-year') || item.querySelector('.gallery-caption-year')?.textContent?.trim() || '';
+    var month = item.getAttribute('data-month') || '';
     var technique = item.getAttribute('data-technique') || '';
     var dimensions = item.getAttribute('data-dimensions') || '';
     titleEl.textContent = title;
-    var metaParts = [year, technique, dimensions].filter(Boolean);
+    var dateDisplay = month ? (month + ' ' + year) : year;
+    var metaParts = [dateDisplay, technique, dimensions].filter(Boolean);
     metaEl.textContent = metaParts.join(' · ');
   }
 
