@@ -77,12 +77,14 @@ function initTabs() {
       const filter = btn.dataset.filter;
       // Hide all panels
       document.querySelectorAll('.tab-panel').forEach(p => {
+        p.classList.remove('active');
         p.style.display = 'none';
       });
       // Show matching panel
       const panel = document.getElementById(`tab-${filter}`);
       if (panel) {
-        panel.style.display = '';
+        panel.classList.add('active');
+        panel.style.display = 'block';
         // Re-trigger reveals in panel
         panel.querySelectorAll('.gallery-item').forEach((item, i) => {
           item.classList.remove('visible');

@@ -153,6 +153,10 @@ nav {
 }
 .works-filters::-webkit-scrollbar { display: none; }
 
+/* Tab panels — controlled by JS + active class */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
 .filter-btn {
   font-family: var(--sans); font-size: 0.68rem; font-weight: 400;
   letter-spacing: 0.18em; text-transform: uppercase;
