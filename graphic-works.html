@@ -1746,7 +1746,11 @@
 
 <div class="gallery-inquire-note">
   For any inquiry please contact Mr Maxim Kantor at: <a href="mailto:maxim.kantor@pmb.ox.ac.uk">maxim.kantor@pmb.ox.ac.uk</a>
-</div>  <div class="lightbox-body">
+</div>
+
+<div id="lightbox" class="lightbox-overlay" onclick="if(event.target===this)closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">×</button>
+  <div class="lightbox-body">
     <div class="lightbox-img-area">
       <button class="lightbox-nav-btn lightbox-prev" onclick="lbNav(-1)">&#8592;</button>
       <img id="lb-img" src="" alt="">

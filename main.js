@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.querySelector('.lightbox-next').addEventListener('click', function() { navigate(1); });
     overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLightbox(); });
     document.addEventListener('keydown', function(e) {
-      if (!overlay.classList.contains('active')) return;
+      if (!overlay.classList.contains('open')) return;
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') navigate(-1);
       if (e.key === 'ArrowRight') navigate(1);
@@ -397,12 +397,12 @@ document.addEventListener('DOMContentLoaded', () => {
     currentItems = items;
     currentIdx = idx;
     showItem();
-    overlay.classList.add('active');
+    overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
-    if (overlay) overlay.classList.remove('active');
+    if (overlay) overlay.classList.remove('open');
     document.body.style.overflow = '';
   }
 
@@ -440,7 +440,10 @@ document.addEventListener('DOMContentLoaded', () => {
         wrap.addEventListener('click', function(e) {
           // Don't trigger if detail badge was clicked
           if (e.target.closest('.detail-badge')) return;
-          // Get currently visible items (filtered)
+          // Only trigger if the item is inside the active tab panel (or not in any tab panel)
+          var panel = item.closest('.tab-panel');
+          if (panel && !panel.classList.contains('active')) return;
+          // Get currently visible items in same grid (filtered)
           var visibleItems = items.filter(function(i) { return i.style.display !== 'none'; });
           var visibleIdx = visibleItems.indexOf(item);
           openLightbox(visibleItems, visibleIdx >= 0 ? visibleIdx : 0);
