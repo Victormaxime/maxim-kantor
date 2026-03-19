@@ -89,12 +89,12 @@ function initTabs() {
         const filterBar = document.querySelector('.works-filters-wrap');
         const scrollTarget = (filterBar ? filterBar.getBoundingClientRect().bottom + window.scrollY : 0);
         window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
-        // Re-trigger reveals in panel
-        panel.querySelectorAll('.gallery-item').forEach((item, i) => {
-          item.classList.remove('visible');
-          setTimeout(() => item.classList.add('visible'), i * 50);
+        // Force all items visible immediately (bypass IntersectionObserver delay)
+        panel.querySelectorAll('.gallery-item, .reveal').forEach(el => {
+          el.classList.add('visible');
+          el.style.opacity = '1';
+          el.style.transform = 'none';
         });
-        panel.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
       }
     });
   });
