@@ -356,97 +356,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })();
 
-/* ─── LIGHTBOX ───────────────────────────────────────────── */
+/* ─── LIGHTBOX (gallery-item click → global lbItems/openLightbox) ───────── */
 (function() {
-  var overlay, imgEl, titleEl, metaEl, currentItems, currentIdx;
-
-  function buildLightbox() {
-    if (document.getElementById('lightbox-overlay')) return;
-    overlay = document.createElement('div');
-    overlay.id = 'lightbox-overlay';
-    overlay.className = 'lightbox-overlay';
-    overlay.innerHTML =
-      '<button class="lightbox-close" aria-label="Fermer">&times;</button>' +
-      '<button class="lightbox-nav-btn lightbox-prev" aria-label="Précédent">&#8592;</button>' +
-      '<div class="lightbox-inner">' +
-        '<img class="lightbox-img" src="" alt="">' +
-        '<div class="lightbox-caption">' +
-          '<div class="lb-title"></div>' +
-          '<div class="lb-meta"></div>' +
-        '</div>' +
-      '</div>' +
-      '<button class="lightbox-nav-btn lightbox-next" aria-label="Suivant">&#8594;</button>';
-    document.body.appendChild(overlay);
-    imgEl = overlay.querySelector('.lightbox-img');
-    titleEl = overlay.querySelector('.lb-title');
-    metaEl = overlay.querySelector('.lb-meta');
-    overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-    overlay.querySelector('.lightbox-prev').addEventListener('click', function() { navigate(-1); });
-    overlay.querySelector('.lightbox-next').addEventListener('click', function() { navigate(1); });
-    overlay.addEventListener('click', function(e) { if (e.target === overlay) closeLightbox(); });
-    document.addEventListener('keydown', function(e) {
-      if (!overlay.classList.contains('open')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') navigate(-1);
-      if (e.key === 'ArrowRight') navigate(1);
-    });
-  }
-
-  function openLightbox(items, idx) {
-    buildLightbox();
-    currentItems = items;
-    currentIdx = idx;
-    showItem();
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeLightbox() {
-    if (overlay) overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  function navigate(dir) {
-    currentIdx = (currentIdx + dir + currentItems.length) % currentItems.length;
-    showItem();
-  }
-
-  function showItem() {
-    var item = currentItems[currentIdx];
-    var imgWrap = item.querySelector('.gallery-img-wrap img') || item.querySelector('img');
-    if (imgWrap) {
-      imgEl.src = imgWrap.src;
-      imgEl.alt = imgWrap.alt || '';
-    }
-    var title = item.getAttribute('data-title') || item.querySelector('.gallery-caption-title, .gallery-caption')?.textContent?.trim() || '';
-    var year = item.getAttribute('data-year') || item.querySelector('.gallery-caption-year')?.textContent?.trim() || '';
-    var month = item.getAttribute('data-month') || '';
-    var technique = item.getAttribute('data-technique') || '';
-    var dimensions = item.getAttribute('data-dimensions') || '';
-    titleEl.textContent = title;
-    var dateDisplay = month ? (month + ' ' + year) : year;
-    var metaParts = [dateDisplay, technique, dimensions].filter(Boolean);
-    metaEl.textContent = metaParts.join(' · ');
-  }
-
   function initLightbox() {
-    var grids = document.querySelectorAll('.paintings-grid');
-    grids.forEach(function(grid) {
+    document.querySelectorAll('.paintings-grid').forEach(function(grid) {
       var items = Array.from(grid.querySelectorAll('.gallery-item:not(.detail-panel-row)'));
-      items.forEach(function(item, idx) {
+      items.forEach(function(item) {
         var wrap = item.querySelector('.gallery-img-wrap');
-        if (!wrap) return;
+        if (!wrap || wrap._lbBound) return;
+        wrap._lbBound = true;
         wrap.style.cursor = 'zoom-in';
         wrap.addEventListener('click', function(e) {
-          // Don't trigger if detail badge was clicked
           if (e.target.closest('.detail-badge')) return;
-          // Only trigger if the item is inside the active tab panel (or not in any tab panel)
           var panel = item.closest('.tab-panel');
           if (panel && !panel.classList.contains('active')) return;
-          // Get currently visible items in same grid (filtered)
-          var visibleItems = items.filter(function(i) { return i.style.display !== 'none'; });
-          var visibleIdx = visibleItems.indexOf(item);
-          openLightbox(visibleItems, visibleIdx >= 0 ? visibleIdx : 0);
+          // Populate global lbItems from this grid (visible items only)
+          lbItems = items.filter(function(i) { return i.style.display !== 'none'; });
+          var idx = lbItems.indexOf(item);
+          openLightbox(idx >= 0 ? idx : 0);
         });
       });
     });
@@ -457,7 +384,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     initLightbox();
   }
-  // Re-init after filter changes
   document.addEventListener('click', function(e) {
     if (e.target.classList.contains('filter-btn')) { setTimeout(initLightbox, 300); }
   });

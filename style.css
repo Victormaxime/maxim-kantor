@@ -386,8 +386,7 @@ footer a:hover { color: var(--fg); }
   display: none; position: fixed; inset: 0; z-index: 1000;
   background: rgba(0,0,0,0.97);
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
 }
 .lightbox-overlay.open { display: flex; }
 
