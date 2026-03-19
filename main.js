@@ -85,6 +85,10 @@ function initTabs() {
       if (panel) {
         panel.classList.add('active');
         panel.style.display = 'block';
+        // Scroll content into view (below sticky filter bar)
+        const filterBar = document.querySelector('.works-filters-wrap');
+        const scrollTarget = (filterBar ? filterBar.getBoundingClientRect().bottom + window.scrollY : 0);
+        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
         // Re-trigger reveals in panel
         panel.querySelectorAll('.gallery-item').forEach((item, i) => {
           item.classList.remove('visible');

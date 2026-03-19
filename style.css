@@ -136,7 +136,10 @@ nav {
 
 /* ─── WORKS FILTERS ───────────────────────────────────────── */
 .works-filters-wrap {
-  position: relative;
+  position: sticky;
+  top: 56px;
+  z-index: 90;
+  background: var(--bg);
 }
 .works-filters-wrap::after {
   content: '';
