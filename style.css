@@ -171,6 +171,16 @@ nav {
 .filter-btn:hover { color: var(--fg-dim); }
 .filter-btn.active { color: var(--fg); border-bottom-color: var(--fg); }
 .filter-btn.empty { opacity: 0.35; cursor: default; pointer-events: none; }
+.filter-all-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--fg-dim);
+  padding-right: 32px;
+  margin-right: 32px;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.filter-all-btn.active { color: var(--fg); border-bottom-color: var(--fg); }
 
 /* ─── GALLERY MASONRY ─────────────────────────────────────── */
 .gallery-grid {

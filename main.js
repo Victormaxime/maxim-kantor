@@ -75,6 +75,26 @@ function initTabs() {
       btn.classList.add('active');
 
       const filter = btn.dataset.filter;
+
+      if (filter === 'all') {
+        // Show ALL non-empty panels
+        document.querySelectorAll('.tab-panel').forEach(p => {
+          p.classList.add('active');
+          p.style.display = 'block';
+          p.querySelectorAll('.gallery-item, .reveal').forEach(el => {
+            el.classList.add('visible');
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+        });
+        const nav = document.querySelector('nav');
+        const navH = nav ? nav.getBoundingClientRect().height : 0;
+        const firstPanel = document.querySelector('.tab-panel');
+        const top = firstPanel ? firstPanel.getBoundingClientRect().top + window.scrollY : 0;
+        window.scrollTo({ top: Math.max(0, top - navH - 8), behavior: 'smooth' });
+        return;
+      }
+
       // Hide all panels
       document.querySelectorAll('.tab-panel').forEach(p => {
         p.classList.remove('active');
