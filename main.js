@@ -85,16 +85,22 @@ function initTabs() {
       if (panel) {
         panel.classList.add('active');
         panel.style.display = 'block';
-        // Scroll content into view (below sticky filter bar)
-        const filterBar = document.querySelector('.works-filters-wrap');
-        const scrollTarget = (filterBar ? filterBar.getBoundingClientRect().bottom + window.scrollY : 0);
-        window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+        // Force lazy images to load (they won't load if panel was display:none)
+        panel.querySelectorAll('img[loading="lazy"]').forEach(img => {
+          img.loading = 'eager';
+          if (img.dataset.src) { img.src = img.dataset.src; }
+        });
         // Force all items visible immediately (bypass IntersectionObserver delay)
         panel.querySelectorAll('.gallery-item, .reveal').forEach(el => {
           el.classList.add('visible');
           el.style.opacity = '1';
           el.style.transform = 'none';
         });
+        // Scroll to content (just below sticky nav)
+        const nav = document.querySelector('nav');
+        const navH = nav ? nav.getBoundingClientRect().height : 0;
+        const panelTop = panel.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: Math.max(0, panelTop - navH - 8), behavior: 'smooth' });
       }
     });
   });
