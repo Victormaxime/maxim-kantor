@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.className = 'lightbox-overlay';
     overlay.innerHTML =
       '<button class="lightbox-close" aria-label="Fermer">&times;</button>' +
-      '<button class="lightbox-prev" aria-label="Précédent">&#8592;</button>' +
+      '<button class="lightbox-nav-btn lightbox-prev" aria-label="Précédent">&#8592;</button>' +
       '<div class="lightbox-inner">' +
         '<img class="lightbox-img" src="" alt="">' +
         '<div class="lightbox-caption">' +
@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
           '<div class="lb-meta"></div>' +
         '</div>' +
       '</div>' +
-      '<button class="lightbox-next" aria-label="Suivant">&#8594;</button>';
+      '<button class="lightbox-nav-btn lightbox-next" aria-label="Suivant">&#8594;</button>';
     document.body.appendChild(overlay);
     imgEl = overlay.querySelector('.lightbox-img');
     titleEl = overlay.querySelector('.lb-title');

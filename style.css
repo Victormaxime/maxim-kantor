@@ -384,8 +384,10 @@ footer a:hover { color: var(--fg); }
 /* ─── LIGHTBOX ────────────────────────────────────────────── */
 .lightbox-overlay {
   display: none; position: fixed; inset: 0; z-index: 1000;
-  background: rgba(0,0,0,0.97);  /* fully opaque — nothing shows through */
+  background: rgba(0,0,0,0.97);
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .lightbox-overlay.open { display: flex; }
 
