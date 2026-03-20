@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prints and Drawings — Maxim Kantor</title>
   <meta name="description" content="Prints and drawings by Maxim Kantor — drawings, etchings, watercolours, and artist books.">
-  <link rel="stylesheet" href="style.css?v=1773996303">
+  <link rel="stylesheet" href="style.css?v=1773996927">
   <style>
     /* Drawings & Prints — cap image height so tall portraits don't stretch rows */
     .paintings-grid .gallery-img-wrap { overflow: hidden; }
-    .paintings-grid .gallery-img-wrap img { max-height: 380px; object-fit: cover; object-position: center top; }
+    .paintings-grid .gallery-img-wrap img { max-height: 260px; object-fit: cover; object-position: center top; }
   </style>
 </head>
 <body>
@@ -69,12 +69,12 @@
 
 <div class="works-filters-wrap">
 <div class="works-filters" role="tablist">
-  <button class="filter-btn active" data-filter="prints" role="tab">Prints</button>
-  <button class="filter-btn" data-filter="drawings" role="tab">Drawings</button>
+  <button class="filter-btn" data-filter="prints" role="tab">Prints</button>
+  <button class="filter-btn active" data-filter="drawings" role="tab">Drawings</button>
 </div>
 
 <!-- DRAWINGS -->
-<div id="tab-drawings" class="tab-panel">
+<div id="tab-drawings" class="tab-panel active">
     <div class="gallery-grid paintings-grid">
       <div class="gallery-item reveal" data-year="drawings" data-title="Fight: Christian King vs Sultan" data-details="pd-2024-fight-detail.jpg">
         <div class="gallery-img-wrap">
@@ -496,7 +496,7 @@
 </div>
 
 <!-- ETCHINGS -->
-<div id="tab-prints" class="tab-panel active">
+<div id="tab-prints" class="tab-panel">
   <h3 class="atlas-section-title">ETCHINGS</h3>
   <div class="etchings-list">
 <div class="section-divider" style="margin:3rem 0 2rem;border-top:1px solid rgba(255,255,255,0.1);"></div>
@@ -1603,6 +1603,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=1773994895"></script>
+<script src="main.js?v=1773996927"></script>
 </body>
 </html>
