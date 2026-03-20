@@ -5,11 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prints and Drawings — Maxim Kantor</title>
   <meta name="description" content="Prints and drawings by Maxim Kantor — drawings, etchings, watercolours, and artist books.">
-  <link rel="stylesheet" href="style.css?v=1773996927">
+  <link rel="stylesheet" href="style.css?v=1773997706">
   <style>
-    /* Drawings & Prints — cap image height so tall portraits don't stretch rows */
+    /* Drawings — cap image height */
     .paintings-grid .gallery-img-wrap { overflow: hidden; }
     .paintings-grid .gallery-img-wrap img { max-height: 260px; object-fit: cover; object-position: center top; }
+
+    /* Prints sub-tabs */
+    .prints-subtabs { display: flex; gap: 4px; padding: 0.5rem 0 2rem; flex-wrap: wrap; }
+    .prints-subtab-btn {
+      font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(245,244,240,0.35);
+      background: none; border: none; border-bottom: 1px solid transparent;
+      cursor: pointer; padding: 4px 12px; transition: color 0.18s;
+    }
+    .prints-subtab-btn:hover { color: rgba(245,244,240,0.7); }
+    .prints-subtab-btn.active { color: var(--fg, #f5f4f0); border-bottom-color: var(--fg, #f5f4f0); }
+    .prints-panel { display: none; }
+    .prints-panel.active { display: block; }
+
+    /* Contact sheet grid — Atlas */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 3px;
+      padding: 0;
+    }
+    .contact-grid .gallery-item { cursor: pointer; }
+    .contact-grid .gallery-img-wrap { overflow: hidden; }
+    .contact-grid .gallery-img-wrap img {
+      width: 100%; height: 108px; max-height: 108px;
+      object-fit: cover; object-position: center; display: block;
+      transition: filter 0.2s;
+    }
+    .contact-grid .gallery-item:hover .gallery-img-wrap img { filter: brightness(0.65); }
+    .contact-grid .gallery-caption { display: none; }
+    .contact-grid .gallery-hover-overlay {
+      position: absolute; inset: 0; display: flex; align-items: flex-end;
+      padding: 6px; opacity: 0; transition: opacity 0.2s; pointer-events: none;
+    }
+    .contact-grid .gallery-item:hover .gallery-hover-overlay { opacity: 1; }
+    .contact-grid .gallery-hover-title {
+      font-family: var(--sans); font-size: 0.52rem; letter-spacing: 0.08em;
+      color: rgba(245,244,240,0.9); line-height: 1.2;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+    }
   </style>
 </head>
 <body>
@@ -497,7 +537,15 @@
 
 <!-- ETCHINGS -->
 <div id="tab-prints" class="tab-panel">
-  <h3 class="atlas-section-title">ETCHINGS</h3>
+  <div class="prints-subtabs">
+    <button class="prints-subtab-btn active" data-target="prints-etchings">Etchings</button>
+    <button class="prints-subtab-btn" data-target="prints-wasteland">Wasteland 2001–02</button>
+    <button class="prints-subtab-btn" data-target="prints-metropolis">Metropolis 2003–04</button>
+    <button class="prints-subtab-btn" data-target="prints-vulcanus">Vulcanus 2010</button>
+  </div>
+
+  <div id="prints-etchings" class="prints-panel active">
+<h3 class="atlas-section-title">ETCHINGS</h3>
   <div class="etchings-list">
 <div class="section-divider" style="margin:3rem 0 2rem;border-top:1px solid rgba(255,255,255,0.1);"></div>
     <h3 style="font-family:var(--sans);font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.5rem;">Etchings — Selected Works</h3>
@@ -820,8 +868,11 @@
     </div>
   </div><!-- 2022 DON QUIXOTE A PITER -->
   </div>
-  <h3 class="atlas-section-title" style="margin-top:64px;">WASTELAND. ATLAS — 2001-2002</h3>
-<div class="gallery-grid paintings-grid">
+  </div>
+
+  <div id="prints-wasteland" class="prints-panel">
+<h3 class="atlas-section-title" style="margin-top:64px;">WASTELAND. ATLAS — 2001-2002</h3>
+<div class="contact-grid">
       <div class="gallery-item reveal" data-title="Wasteland Atlas 1/70" data-year="graphic">
         <div class="gallery-img-wrap"><img src="images/atlas-wasteland-001.jpg" alt="Wasteland Atlas 1/70" loading="lazy"></div>
         <div class="gallery-caption"><span class="gallery-caption-title">Wasteland Atlas 1/70</span></div>
@@ -1103,8 +1154,11 @@
         <div class="gallery-caption"><span class="gallery-caption-title">Wasteland Atlas 70/70</span></div>
       </div>
 </div>
-  <h3 class="atlas-section-title">METROPOLIS. ATLAS — 2003-2004</h3>
-<div class="gallery-grid paintings-grid">
+  </div>
+
+  <div id="prints-metropolis" class="prints-panel">
+<h3 class="atlas-section-title">METROPOLIS. ATLAS — 2003-2004</h3>
+<div class="contact-grid">
       <div class="gallery-item reveal" data-title="Metropolis Atlas 1/43" data-year="graphic">
         <div class="gallery-img-wrap"><img src="images/atlas-metropolis-001.jpg" alt="Metropolis Atlas 1/43" loading="lazy"></div>
         <div class="gallery-caption"><span class="gallery-caption-title">Metropolis Atlas 1/43</span></div>
@@ -1278,8 +1332,11 @@
         <div class="gallery-caption"><span class="gallery-caption-title">Metropolis Atlas 43/43</span></div>
       </div>
 </div>
-  <h3 class="atlas-section-title">VULCANUS. ATLAS — 2010</h3>
-<div class="gallery-grid paintings-grid">
+  </div>
+
+  <div id="prints-vulcanus" class="prints-panel">
+<h3 class="atlas-section-title">VULCANUS. ATLAS — 2010</h3>
+<div class="contact-grid">
       <div class="gallery-item reveal" data-title="Vulcanus Atlas 1/71" data-year="graphic">
         <div class="gallery-img-wrap"><img src="images/atlas-vulcanus-1-self-portrait-between-lenin-and-putin.jpg" alt="Vulcanus Atlas 1/71" loading="lazy"></div>
         <div class="gallery-caption"><span class="gallery-caption-title">Vulcanus Atlas 1/71</span></div>
@@ -1570,6 +1627,9 @@
 <div class="gallery-inquire-note">
   For any inquiry please contact Mr Maxim Kantor at: <a href="mailto:maxim.kantor@pmb.ox.ac.uk">maxim.kantor@pmb.ox.ac.uk</a>
 </div>
+  </div>
+
+</div>
 
 <div id="lightbox" class="lightbox-overlay" onclick="if(event.target===this)closeLightbox()">
   <button class="lb-close" onclick="closeLightbox()">×</button>
@@ -1603,6 +1663,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=1773996927"></script>
+<script src="main.js?v=1773997706"></script>
 </body>
 </html>

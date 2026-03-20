@@ -444,3 +444,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 })();
+
+/* ─── PRINTS SUB-TABS ─────────────────────────────────────── */
+(function() {
+  function initPrintsSubtabs() {
+    var btns = document.querySelectorAll('.prints-subtab-btn');
+    if (!btns.length) return;
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.prints-panel').forEach(function(p) {
+          p.classList.remove('active');
+          p.style.display = 'none';
+        });
+        btn.classList.add('active');
+        var target = document.getElementById(btn.dataset.target);
+        if (target) { target.classList.add('active'); target.style.display = 'block'; }
+        // Re-init lightbox for newly shown items
+        if (typeof initLightboxForGrid === 'function') initLightboxForGrid();
+        window.scrollTo({ top: document.getElementById('tab-prints').getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+      });
+    });
+    // Show first panel on load
+    var firstPanel = document.querySelector('.prints-panel');
+    if (firstPanel) firstPanel.style.display = 'block';
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPrintsSubtabs);
+  } else {
+    initPrintsSubtabs();
+  }
+})();
