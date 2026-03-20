@@ -696,7 +696,7 @@ footer a:hover { color: var(--fg); }
   .paintings-grid { grid-template-columns: 1fr; }
 }
 .paintings-grid .gallery-img-wrap img {
-  max-height: none;
+  max-height: 520px;
   object-fit: contain;
   height: auto;
   width: 100%;
