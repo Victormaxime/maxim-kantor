@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prints and Drawings — Maxim Kantor</title>
   <meta name="description" content="Prints and drawings by Maxim Kantor — drawings, etchings, watercolours, and artist books.">
-  <link rel="stylesheet" href="style.css?v=1773996158">
+  <link rel="stylesheet" href="style.css?v=1773996303">
+  <style>
+    /* Drawings & Prints — cap image height so tall portraits don't stretch rows */
+    .paintings-grid .gallery-img-wrap { overflow: hidden; }
+    .paintings-grid .gallery-img-wrap img { max-height: 380px; object-fit: cover; object-position: center top; }
+  </style>
 </head>
 <body>
   <a href="explore.html" class="back-to-explore" aria-label="All works">
