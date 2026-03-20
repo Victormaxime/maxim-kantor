@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ─── LIGHTBOX (gallery-item click → global lbItems/openLightbox) ───────── */
 (function() {
   function initLightbox() {
-    document.querySelectorAll('.paintings-grid').forEach(function(grid) {
+    document.querySelectorAll('.paintings-grid, .gallery-grid').forEach(function(grid) {
       var items = Array.from(grid.querySelectorAll('.gallery-item:not(.detail-panel-row)'));
       items.forEach(function(item) {
         var wrap = item.querySelector('.gallery-img-wrap');

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paintings — Maxim Kantor</title>
   <meta name="description" content="Oil paintings by Maxim Kantor, 2005–2025.">
-  <link rel="stylesheet" href="style.css?v=1773988937">
+  <link rel="stylesheet" href="style.css?v=1773990990">
 </head>
 <body>
   <a href="explore.html" class="back-to-explore" aria-label="All works">
@@ -3119,8 +3119,12 @@
       </div>
     </div>
 </div>
-</div>  For any inquiry please contact Mr Maxim Kantor at: <a href="mailto:maxim.kantor@pmb.ox.ac.uk">maxim.kantor@pmb.ox.ac.uk</a>
-</div>  <div class="lightbox-body">
+</div>
+</div>
+
+<div id="lightbox" class="lightbox-overlay" onclick="if(event.target===this)closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-body">
     <div class="lightbox-img-area">
       <button class="lightbox-nav-btn lightbox-prev" onclick="lbNav(-1)">&#8592;</button>
       <img id="lb-img" src="" alt="">
@@ -3129,6 +3133,7 @@
     <div class="lightbox-sidebar">
       <h2 id="lb-title"></h2>
       <ul class="lightbox-meta" id="lb-meta"></ul>
+      <span id="lb-counter" class="lightbox-counter"></span>
       <a href="mailto:maxim.kantor@pmb.ox.ac.uk" class="lightbox-inquire">Inquire</a>
     </div>
   </div>
@@ -3866,6 +3871,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=1773988937"></script>
+<script src="main.js?v=1773990990"></script>
 </body>
 </html>

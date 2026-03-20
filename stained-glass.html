@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stained Glass Windows — Maxim Kantor</title>
-  <link rel="stylesheet" href="style.css?v=1773988937">
+  <link rel="stylesheet" href="style.css?v=1773990990">
 </head>
 <body>
 <nav>
@@ -89,6 +89,23 @@
   </div>
 </footer>
 
-<script src="main.js?v=1773988937"></script>
+<div id="lightbox" class="lightbox-overlay" onclick="if(event.target===this)closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">×</button>
+  <div class="lightbox-body">
+    <div class="lightbox-img-area">
+      <button class="lightbox-nav-btn lightbox-prev" onclick="lbNav(-1)">&#8592;</button>
+      <img id="lb-img" src="" alt="">
+      <button class="lightbox-nav-btn lightbox-next" onclick="lbNav(1)">&#8594;</button>
+    </div>
+    <div class="lightbox-sidebar">
+      <h2 id="lb-title"></h2>
+      <ul class="lightbox-meta" id="lb-meta"></ul>
+      <span id="lb-counter" class="lightbox-counter"></span>
+      <a href="mailto:maxim.kantor@pmb.ox.ac.uk" class="lightbox-inquire">Inquire</a>
+    </div>
+  </div>
+</div>
+
+<script src="main.js?v=1773990990"></script>
 </body>
 </html>
