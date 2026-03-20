@@ -189,6 +189,10 @@ nav {
 .paintings-grid .gallery-medium {
   grid-column: span 2;
 }
+.paintings-grid .gallery-small {
+  max-width: 75%;
+  margin: 0 auto;
+}
 
 .filter-all-btn {
   font-size: 0.72rem;
