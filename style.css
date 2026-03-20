@@ -186,6 +186,13 @@ nav {
   max-height: 88vh;
   object-fit: contain;
 }
+.paintings-grid .gallery-xl {
+  grid-column: 1 / -1;
+}
+.paintings-grid .gallery-xl .gallery-img-wrap img {
+  max-height: 110vh;
+  object-fit: contain;
+}
 .paintings-grid .gallery-medium {
   grid-column: span 2;
 }
