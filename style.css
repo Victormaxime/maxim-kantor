@@ -171,6 +171,15 @@ nav {
 .filter-btn:hover { color: var(--fg-dim); }
 .filter-btn.active { color: var(--fg); border-bottom-color: var(--fg); }
 .filter-btn.empty { opacity: 0.35; cursor: default; pointer-events: none; }
+/* Wide item — spans full row in paintings-grid */
+.paintings-grid .gallery-wide {
+  grid-column: 1 / -1;
+}
+.paintings-grid .gallery-wide .gallery-img-wrap img {
+  max-height: 70vh;
+  object-fit: contain;
+}
+
 .filter-all-btn {
   font-size: 0.72rem;
   font-weight: 600;
