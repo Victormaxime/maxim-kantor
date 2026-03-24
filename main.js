@@ -234,6 +234,25 @@ function renderLightbox() {
   // Counter
   const lbCounter = document.getElementById('lb-counter');
   if (lbCounter) lbCounter.textContent = `${lbCurrent + 1} / ${lbItems.length}`;
+
+  // Inquire button (2026 paintings only)
+  const lbSidebar = document.querySelector('.lightbox-sidebar');
+  if (lbSidebar) {
+    let inquireBtn = document.getElementById('lb-inquire');
+    if (year === '2026') {
+      if (!inquireBtn) {
+        inquireBtn = document.createElement('a');
+        inquireBtn.id = 'lb-inquire';
+        inquireBtn.className = 'lightbox-inquire';
+        inquireBtn.href = 'mailto:maxim.kantor@pmb.ox.ac.uk';
+        inquireBtn.textContent = 'Inquire';
+        lbSidebar.appendChild(inquireBtn);
+      }
+      inquireBtn.style.display = '';
+    } else {
+      if (inquireBtn) inquireBtn.style.display = 'none';
+    }
+  }
 }
 
 // Keyboard nav
