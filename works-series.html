@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Series — Maxim Kantor</title>
+  <meta name="description" content="Featured bodies of work by Maxim Kantor: Wasteland, Metropolis, Vulcanus and Puppets.">
+  <link rel="stylesheet" href="style.css?v=1774031394">
+  <style>
+    .series-page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+    .series-intro {
+      max-width: 860px;
+      margin: 0 0 3rem;
+    }
+    .series-kicker {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,244,240,0.45);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+    .series-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(245,244,240,0.09);
+      min-height: 420px;
+    }
+    .series-copy {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .series-meta {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245,244,240,0.45);
+      margin-bottom: 0.9rem;
+    }
+    .series-copy h2 {
+      margin-bottom: 1rem;
+    }
+    .series-copy p {
+      max-width: 42ch;
+      color: rgba(245,244,240,0.8);
+    }
+    .series-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .series-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.8rem 1rem;
+      border: 1px solid rgba(245,244,240,0.18);
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .series-link:hover {
+      border-color: rgba(245,244,240,0.42);
+      background: rgba(245,244,240,0.05);
+    }
+    .series-works {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.45rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: rgba(245,244,240,0.64);
+    }
+    .series-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 1080px) {
+      .series-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .series-page { padding: 0 1rem 4rem; }
+      .series-card { grid-template-columns: 1fr; }
+      .series-image { min-height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Maxim Kantor</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+      <ul class="nav-links" id="nav-links">
+    <li class="nav-item-has-dropdown">
+      <a href="paintings.html" class="nav-link-dropdown">Works <span class="nav-arrow">&#9660;</span></a>
+      <ul class="nav-dropdown">
+        <li><a href="paintings.html">Paintings</a></li>
+        <li><a href="graphic-works.html">Prints and Drawings</a></li>
+        <li><a href="works-series.html">Featured Series</a></li>
+        <li><a href="livres-artiste.html">Livres d&#39;Artiste</a></li>
+        <li><a href="sculpture.html">Sculpture</a></li>
+        <li><a href="stained-glass.html">Stained Glass Windows</a></li>
+        <li><a href="installations.html">Site Specific Artworks</a></li>
+      </ul>
+    </li>
+    <li class="nav-item-has-dropdown">
+      <a href="books.html" class="nav-link-dropdown">Books <span class="nav-arrow">&#9660;</span></a>
+      <ul class="nav-dropdown">
+        <li><a href="books.html">Books by Maxim Kantor</a></li>
+        <li><a href="catalogues.html">Catalogues</a></li>
+      </ul>
+    </li>
+    <li><a href="exhibitions.html">Exhibitions</a></li>
+    <li class="nav-item-has-dropdown">
+      <a href="biography.html" class="nav-link-dropdown">About <span class="nav-arrow">&#9660;</span></a>
+      <ul class="nav-dropdown">
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="writings.html">Writings</a></li>
+        <li><a href="atelier.html">Atelier</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
+</nav>
+
+<main class="series-page">
+  <header class="series-intro reveal">
+    <p class="series-kicker">Works</p>
+    <h1>Featured Series</h1>
+    <p>Four bodies of work that were previously hard to locate are now surfaced as direct entry points. The three atlas cycles link straight into <em>Prints and Drawings</em>. <em>Puppets</em> is currently evidenced as an autonomous theatre work, pending any larger dedicated corpus.</p>
+  </header>
+
+  <section class="series-grid">
+    <article class="series-card reveal">
+      <div class="series-copy">
+        <div>
+          <p class="series-meta">Etching atlas, 2000–2001</p>
+          <h2>Wasteland</h2>
+          <p>A monumental etching cycle, also documented as <em>Pustyr</em> and exhibited as <em>Wasteland Atlas</em>. The site already contains the full atlas, catalogue material and exhibition evidence, but it needed a direct way in.</p>
+        </div>
+        <ul class="series-works">
+          <li>70 atlas plates in Prints and Drawings</li>
+          <li>Tretyakov exhibition photograph</li>
+          <li>Catalogue reference: <em>Pustyr — Wasteland Atlas</em></li>
+        </ul>
+        <div class="series-links">
+          <a class="series-link" href="graphic-works.html#prints-wasteland">Open series</a>
+          <a class="series-link" href="exhibitions.html">Exhibition record</a>
+        </div>
+      </div>
+      <div class="series-image"><img src="images/atlas-wasteland-001.jpg" alt="Wasteland Atlas"></div>
+    </article>
+
+    <article class="series-card reveal">
+      <div class="series-copy">
+        <div>
+          <p class="series-meta">Etching atlas, 2003–2004</p>
+          <h2>Metropolis</h2>
+          <p>A large autonomous atlas cycle already present in the assets and in <em>Prints and Drawings</em>. This card makes it reachable as a named body of work instead of burying it inside the broader graphic section.</p>
+        </div>
+        <ul class="series-works">
+          <li>43 atlas plates in Prints and Drawings</li>
+          <li>Publication record already present</li>
+          <li>Direct access from Works navigation</li>
+        </ul>
+        <div class="series-links">
+          <a class="series-link" href="graphic-works.html#prints-metropolis">Open series</a>
+          <a class="series-link" href="publications.html">Publication record</a>
+        </div>
+      </div>
+      <div class="series-image"><img src="images/atlas-metropolis-001.jpg" alt="Metropolis Atlas"></div>
+    </article>
+
+    <article class="series-card reveal">
+      <div class="series-copy">
+        <div>
+          <p class="series-meta">Etching atlas, 2010</p>
+          <h2>Vulcanus</h2>
+          <p>The sources consistently point to <em>Vulcanus</em>, not “Vulcanud”. The site already includes the atlas, catalogue references and exhibition mentions, but it is now promoted as a first-class series in Works.</p>
+        </div>
+        <ul class="series-works">
+          <li>71 atlas plates in Prints and Drawings</li>
+          <li>Catalogue reference: <em>Vulcanus — Satires dans tous les sens</em></li>
+          <li>Related exhibition mentions: Berlin, Paris, Milan/Oxford contexts</li>
+        </ul>
+        <div class="series-links">
+          <a class="series-link" href="graphic-works.html#prints-vulcanus">Open series</a>
+          <a class="series-link" href="catalogues.html">Catalogue record</a>
+        </div>
+      </div>
+      <div class="series-image"><img src="images/atlas-vulcanus-1-self-portrait-between-lenin-and-putin.jpg" alt="Vulcanus Atlas"></div>
+    </article>
+
+    <article class="series-card reveal">
+      <div class="series-copy">
+        <div>
+          <p class="series-meta">Theatre work, current minimum record</p>
+          <h2>Puppets</h2>
+          <p>The current source material supports an autonomous theatre / puppet work, centered on <em>Robin Hood and Spiritual Buckles</em> (2014), described as written, designed and built by Kantor. I surfaced it as a minimal standalone entry, with room to expand if more dedicated material appears.</p>
+        </div>
+        <ul class="series-works">
+          <li>Documented in Publications → Theatre</li>
+          <li>Linked visual proxy from the Robin Hood corpus</li>
+          <li>Status to confirm: broader puppet cycle vs currently documented standalone work</li>
+        </ul>
+        <div class="series-links">
+          <a class="series-link" href="publications.html#works-puppets">Open current record</a>
+          <a class="series-link" href="livres-artiste.html">Related Robin Hood material</a>
+        </div>
+      </div>
+      <div class="series-image"><img src="images/livres-2014-robinhood-cover-1.jpg" alt="Robin Hood and Spiritual Buckles"></div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <span>© 2026 Maxim Kantor</span>
+    <span style="color:rgba(245,244,240,0.15)">·</span>
+    <span>All rights reserved</span>
+  </div>
+  <div class="footer-right">
+    <a href="https://www.instagram.com/maxim.kantor2026/" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram" style="display:inline-flex;align-items:center;gap:7px;font-size:0.62rem;letter-spacing:0.12em;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+      @maxim.kantor2026
+    </a>
+  </div>
+</footer>
+
+<script src="main.js?v=1774031394"></script>
+</body>
+</html>
