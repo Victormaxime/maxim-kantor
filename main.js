@@ -54,6 +54,16 @@ function toggleNav() {
   document.getElementById('nav-links')?.classList.toggle('open');
 }
 
+function injectFeaturedSeriesNav() {
+  const worksDropdown = document.querySelector('.nav-item-has-dropdown .nav-dropdown');
+  if (!worksDropdown) return;
+  if (worksDropdown.querySelector('a[href="works-series.html"]')) return;
+
+  const li = document.createElement('li');
+  li.innerHTML = '<a href="works-series.html">Featured Series</a>';
+  worksDropdown.insertBefore(li, worksDropdown.children[2] || null);
+}
+
 // ── Tab system (paintings.html, graphic-works.html) ───────────────────────
 function initTabs() {
   const btns = document.querySelectorAll('.filter-btn[data-filter]');
@@ -266,6 +276,7 @@ document.addEventListener('keydown', e => {
 
 // ── Init ──────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  injectFeaturedSeriesNav();
   initImages();
   initGalleryReveal();
   initScrollReveal();
@@ -492,5 +503,31 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('DOMContentLoaded', initPrintsSubtabs);
   } else {
     initPrintsSubtabs();
+  }
+})();
+
+
+/* ─── DEEP LINKS FOR FEATURED SERIES ─────────────────────── */
+(function() {
+  function openSeriesFromHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (!hash) return;
+
+    var printTargets = ['prints-wasteland', 'prints-metropolis', 'prints-vulcanus'];
+    if (printTargets.indexOf(hash) !== -1) {
+      var printsTabBtn = document.querySelector('.filter-btn[data-filter="prints"]');
+      if (printsTabBtn) printsTabBtn.click();
+
+      setTimeout(function() {
+        var subtabBtn = document.querySelector('.prints-subtab-btn[data-target="' + hash + '"]');
+        if (subtabBtn) subtabBtn.click();
+      }, 120);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', openSeriesFromHash);
+  } else {
+    openSeriesFromHash();
   }
 })();
