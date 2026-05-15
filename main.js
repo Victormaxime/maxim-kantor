@@ -419,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ─── LIGHTBOX (gallery-item click → global lbItems/openLightbox) ───────── */
 (function() {
   function initLightbox() {
-    document.querySelectorAll('.paintings-grid, .gallery-grid').forEach(function(grid) {
+    document.querySelectorAll('.paintings-grid, .gallery-grid, .contact-grid').forEach(function(grid) {
       var items = Array.from(grid.querySelectorAll('.gallery-item:not(.detail-panel-row)'));
       items.forEach(function(item) {
         var wrap = item.querySelector('.gallery-img-wrap');
@@ -430,8 +430,10 @@ document.addEventListener('DOMContentLoaded', () => {
           if (e.target.closest('.detail-badge')) return;
           var panel = item.closest('.tab-panel');
           if (panel && !panel.classList.contains('active')) return;
-          // Populate global lbItems from this grid (visible items only)
-          lbItems = items.filter(function(i) { return i.style.display !== 'none'; });
+          // Populate global lbItems from this grid (only items whose panel/sub-panel is visible).
+          lbItems = items.filter(function(i) {
+            return i.offsetParent !== null && window.getComputedStyle(i).display !== 'none';
+          });
           var idx = lbItems.indexOf(item);
           openLightbox(idx >= 0 ? idx : 0);
         });
